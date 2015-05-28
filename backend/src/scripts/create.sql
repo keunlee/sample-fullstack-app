@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS stocksdb_kl;
+
+CREATE DATABASE stocksdb_kl;
