@@ -39,9 +39,13 @@ Ember.Component.extend({
   renderChart: function (result) {
     var data = result.query.results.quote;
 
-    var margin = {top: 20, right: 50, bottom: 30, left: 30},
+    var margin = {top: 20, right: 20, bottom: 30, left: 50},
       width = 960 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
+
+    var parseDate = d3.time.format("%d-%b-%y").parse,
+      timeFormat = d3.time.format('%Y-%m-%d'),
+      valueFormat = d3.format(',.2fs');
 
     var x = techan.scale.financetime()
       .range([0, width]);
@@ -57,37 +61,9 @@ Ember.Component.extend({
       .scale(x)
       .orient("bottom");
 
-    var xTopAxis = d3.svg.axis()
-      .scale(x)
-      .orient("top");
-
     var yAxis = d3.svg.axis()
       .scale(y)
       .orient("left");
-
-    var yRightAxis = d3.svg.axis()
-      .scale(y)
-      .orient("right");
-
-    var ohlcAnnotation = techan.plot.axisannotation()
-      .axis(yAxis)
-      .accessor(candlestick.accessor())
-      .format(d3.format(',.2fs'));
-
-    var ohlcRightAnnotation = techan.plot.axisannotation()
-      .axis(yRightAxis)
-      .accessor(candlestick.accessor())
-      .translate([width, 0]); // Translation can be optionally set here, or over the group
-
-    var timeAnnotation = techan.plot.axisannotation()
-      .axis(xAxis)
-      .accessor(candlestick.accessor().d)
-      .format(d3.time.format('%Y-%m-%d'))
-      .width(65);
-
-    var timeTopAnnotation = techan.plot.axisannotation()
-      .accessor(candlestick.accessor().d)
-      .axis(xTopAxis);
 
     var svg = d3.select(".selected-chart").append("svg")
       .attr("width", width + margin.left + margin.right)
@@ -95,9 +71,15 @@ Ember.Component.extend({
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    var valueText = svg.append('text')
+      .style("text-anchor", "end")
+      .attr("class", "coords")
+      .attr("x", width - 5)
+      .attr("y", 15);
+
     var accessor = candlestick.accessor();
 
-    data = data.slice(0, 200).map(function (d) {
+    data = data.slice(0).map(function (d) {
       return {
         date: new Date(d.Date),
         open: +d.Open,
@@ -120,41 +102,17 @@ Ember.Component.extend({
 
     svg.append("g")
       .attr("class", "x axis")
-      .call(xTopAxis);
-
-    svg.append("g")
-      .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis);
 
     svg.append("g")
       .attr("class", "y axis")
-      .call(yAxis);
-
-    svg.append("g")
-      .attr("class", "y axis")
-      .attr("transform", "translate(" + width + ",0)")
-      .call(yRightAxis);
-
-    svg.append("g")
-      .attr("class", "y annotation left")
-      .datum([data[130], data[100], data[0]])
-      .call(ohlcAnnotation);
-
-    svg.append("g")
-      .attr("class", "x annotation bottom")
-      .attr("transform", "translate(0," + height + ")")
-      .datum([data[30]])
-      .call(timeAnnotation);
-
-    svg.append("g")
-      .attr("class", "y annotation right")
-      .datum([data[188], data[80]])
-      .call(ohlcRightAnnotation);
-
-    svg.append("g")
-      .attr("class", "x annotation top")
-      .datum([data[80]])
-      .call(timeTopAnnotation);
+      .call(yAxis)
+      .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Price ($)");
   }
 });
