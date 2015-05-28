@@ -22,5 +22,7 @@ app.import('bower_components/select2-bootstrap/select2-bootstrap.css');
 app.import('bower_components/d3/d3.min.js');
 app.import('bower_components/TechanJS/dist/techan.min.js');
 app.import('bower_components/moment/moment.js');
+app.import('bower_components/bootstrap/dist/js/bootstrap.min.js');
+app.import('bower_components/bootbox/bootbox.js');
 
 module.exports = app.toTree();

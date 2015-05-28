@@ -1,4 +1,4 @@
-/*global $, d3, techan, moment*/
+/*global $, d3, techan, moment, bootbox*/
 import Ember from 'ember';
 
 export default
@@ -37,7 +37,14 @@ Ember.Component.extend({
     }.observes('selectedItem').on('init'),
 
     renderChart: function (result) {
-        var data = result.query.results.quote;
+        var results = result.query.results;
+
+        if ( results == null ) {
+            bootbox.alert("Insufficient historical stock data. Can not render the selected stock", function() {});
+            return;
+        }
+
+        var data = results.quote;
 
         var margin = {top: 20, right: 20, bottom: 30, left: 50},
             width = 960 - margin.left - margin.right,
