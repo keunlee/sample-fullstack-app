@@ -14,7 +14,7 @@ You will need the following things properly installed on your computer.
 
 ### Database Setup
 
-1. locate the following folder `backend/scripts` and execute the sql scripts `create.sql` and `schema.sql`, in that order, against your postgresql database. 
+1. locate the following folder `backend/src/scripts` and execute the sql scripts `create.sql` and `schema.sql`, in that order, against your postgresql database. 
 2. locate the following file `backend/src/main/resources/database.properties` and replace the property values to match that of your own environment.
 
 ### Loading Sample Data
