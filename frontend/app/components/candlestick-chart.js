@@ -23,6 +23,7 @@ Ember.Component.extend({
             var dataFormat = "&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
             var historicalQ = yqlURL + "select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22" + symbol + "%22%20and%20startDate%20%3D%20%22" + startDate + "%22%20and%20endDate%20%3D%20%22" + endDate + "%22" + dataFormat;
 
+            $('.stock-loading-spinner').css('visibility', 'visible');
             $.ajax({
                 url: historicalQ,
                 dataType: 'json',
@@ -30,7 +31,10 @@ Ember.Component.extend({
             }).done(function (data) {
                 console.log(symbol);
                 self.renderChart(data);
+                $('.stock-loading-spinner').css('visibility', 'hidden');
             }).fail(function () {
+                $('.stock-loading-spinner').css('visibility', 'hidden');
+                bootbox.alert("Service is not reachable", function() {});
             });
         }
 
