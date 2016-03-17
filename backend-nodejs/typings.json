@@ -1,0 +1,13 @@
+{
+  "version": false,
+  "dependencies": {},
+  "ambientDependencies": {
+    "bluebird": "registry:dt/bluebird#2.0.0+20160209044412",
+    "hapi": "registry:dt/hapi#13.0.0+20160224204942",
+    "lodash": "registry:dt/lodash#3.10.0+20160314033737",
+    "node": "registry:dt/node#4.0.0+20160316042000",
+    "q": "registry:dt/q#0.0.0+20160215162030",
+    "sequelize": "registry:dt/sequelize#3.4.1+20160312135039",
+    "validator": "registry:dt/validator#4.5.1+20160124232055"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "backend-nodejs",
+  "version": "1.0.0",
+  "description": "**NOTES**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^1.0.0",
+    "bluebird": "^3.3.4",
+    "chalk": "^1.1.1",
+    "commander": "^2.9.0",
+    "csv-parse": "^1.0.2",
+    "hapi": "^13.2.1",
+    "inversify": "1.0.3",
+    "lodash": "^4.6.1",
+    "pg": "^4.5.1",
+    "pg-hstore": "^2.3.2",
+    "q": "^1.4.1",
+    "sequelize": "^3.19.3",
+    "validator": "^5.1.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^2.2.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-nodemon": "^0.4.1",
+    "grunt-tslint": "^3.0.3",
+    "load-grunt-tasks": "^3.4.1",
+    "shelljs": "^0.6.0",
+    "tslint": "^3.6.0-dev.1",
+    "typescript": "^1.9.0-dev.20160316"
+  }
+}
