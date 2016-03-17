@@ -4,8 +4,10 @@ import {StockServiceImpl} from "../service/impl/StockServiceImpl";
 import {ImportStocksCLI} from "./ImportStocksCLI";
 import models = require('../domain/sequelize-models');
 
-models.initialize('stocksdb_kl', 'dbuser', 'password', {
-    dialect : 'postgres',
+let packageJson = require('../../package.json');
+
+models.initialize( packageJson.database.name , packageJson.database.username, packageJson.database.password, {
+    dialect : packageJson.database.dialect,
     define : {
         timestamps : false,
         freezeTableName : true
