@@ -3,4 +3,4 @@
 **/*.js.map
 src/**/*.js.map
 src/**/*.js
-*.DS_Store
+**/*.DS_Store
