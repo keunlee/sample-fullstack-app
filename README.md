@@ -1,39 +1,32 @@
 ## Overview
 
-Sample fullstack application which allows you to look up stock symbols and chart them. 
+Sample fullstack application which allows you to look up stock symbols and chart them.
 
-## Backend
-
-### Prerequisites
+## Prerequisites
 
 You will need the following things properly installed on your computer.
 
-* Maven
-* java 1.7+
 * Postgresql 9+
 
-### Database Setup
+## Database Setup
 
-1. locate the following folder `backend/src/scripts` and execute the sql scripts `create.sql` and `schema.sql`, in that order, against your postgresql database. 
-2. locate the following file `backend/src/main/resources/database.properties` and replace the property values to match that of your own environment.
+* Locate the following folder `database` and execute the sql scripts `create.sql` and `schema.sql`, in that order, against your postgresql database.
 
-### Loading Sample Data
+## Backend
 
-1. From the commandline, change the current working directory to the folder `backend`. This is the root directory and you should see a pom file located in this directory. 
-2. Run: `mvn clean compile package`
-3. Verify the existence of directory: `backend/target` (i.e. `ls`)
-3. Run: `java -jar target/exercise-1.0-SNAPSHOT.jar import --file src/main/resources/data/nyse.csv`
-4. Run: `java -jar target/exercise-1.0-SNAPSHOT.jar import --file src/main/resources/data/nasdaq.csv`
-5. Run: `java -jar target/exercise-1.0-SNAPSHOT.jar import --file src/main/resources/data/amex.csv`
+This project has three backend implementations which are identical in feature but different in implementation.
 
-### Starting the Backend Server
+Please choose between any one of the implementations and setup as guided in their README's.
 
-1. From the commandline, change the current working directory to the folder `backend`. This is the root directory and you should see a pom file located in this directory.
-2. Run: `mvn jetty:run`
-3. Verify that the server has started
-4. Verify that our stock look up service is working by navigating to the following: [http://localhost:8080/service/stocks?q=aa](http://localhost:8080/service/stocks?q=aa) (you should see results)
+* Java Backend
+* Node JS Backend
+* .Net Backend
 
 ## Frontend
+
+### TODO:
+
+Ember CLI is F'd for node >=5 and npm >= 3 :( Will need to switch the frontend implementation with something else. (i.e. react, angular2, or aurelia)
 
 ### Prerequisites
 
@@ -70,4 +63,3 @@ You will need the following things properly installed on your computer.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
