@@ -3,7 +3,7 @@ drop table if exists stock cascade;
 drop sequence if exists stock_id_seq;
 
 create table stock (
-    id int8 not null,
+    id SERIAL not null,
     industry varchar(255),
     ipoYear varchar(255),
     lastSale varchar(255),
