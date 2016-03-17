@@ -4,6 +4,8 @@ import {DependenciesConfig} from "../../config/DependenciesConfig";
 import {Kernel} from '../../../node_modules/inversify/source/inversify';
 import models = require('../../domain/sequelize-models');
 
+let packageJson = require('../../../package.json');
+
 export class ApplicationContext implements IApplicationContext {
     public kernel : IKernel;
     public server : Server;
@@ -51,8 +53,8 @@ export class ApplicationContext implements IApplicationContext {
      * 
      */
     public initializeModels() : void {
-        models.initialize('stocksdb_kl', 'dbuser', 'password', {
-            dialect : 'postgres',
+        models.initialize( packageJson.database.name , packageJson.database.username, packageJson.database.password, {
+            dialect : packageJson.database.dialect,
             define : {
                 timestamps : false,
                 freezeTableName : true

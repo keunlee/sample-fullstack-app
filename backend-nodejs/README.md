@@ -29,7 +29,16 @@ The following should lint and transpile typescript sources to javascript (there 
 ### Database Setup
 
 1. locate the following folder `database` and execute the sql scripts `create.sql` and `schema.sql`, in that order, against your postgresql database.
-2. TODO: create a placeholder for where the node js backend can access the db credentials
+2. locate the file `package.json` and modify the `database` fields w/in it to match your database environment. it should look something like this:
+
+```json
+"database" : {
+    "name" : "stocksdb_kl",
+    "username" : "dbuser",
+    "password" : "password",
+    "dialect" : "postgres"
+  }
+```
 
 ### Loading Sample Data
 
