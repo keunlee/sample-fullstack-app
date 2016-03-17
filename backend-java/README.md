@@ -24,7 +24,7 @@ You will need the following things properly installed on your computer.
 
 ### Starting the Backend Server
 
-1. From the commandline, change the current working directory to the folder `backend`. This is the root directory and you should see a pom file located in this directory.
+1. From the commandline, change the current working directory to the folder `backend-java`. This is the root directory and you should see a pom file located in this directory.
 2. Run: `mvn jetty:run`
 3. Verify that the server has started
 4. Verify that our stock look up service is working by navigating to the following: [http://localhost:8080/service/stocks?q=aa](http://localhost:8080/service/stocks?q=aa) (you should see results)
