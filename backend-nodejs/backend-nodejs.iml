@@ -6,5 +6,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="backend-nodejs node_modules" level="project" />
   </component>
 </module>

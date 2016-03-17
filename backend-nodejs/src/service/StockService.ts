@@ -1,6 +1,6 @@
-import {StockPojo} from "../domain/sequelize-types";
+import {StockDto} from "../dto/StockDto";
 
 export interface StockService {
-    importStocksByCSVFile( file : string ) : Q.Promise<StockPojo[]>;
-    findStocksByWildCard( phrase : string ) : Q.Promise<StockPojo[]>;
+    importStocksByCSVFile( file : string ) : Q.Promise<StockDto[]>;
+    findStocksByWildCard( phrase : string ) : Q.Promise<StockDto[]>;
 }

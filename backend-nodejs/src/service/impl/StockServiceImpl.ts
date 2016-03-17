@@ -1,15 +1,15 @@
 import {StockService} from "../StockService";
-import {StockPojo} from "../../domain/sequelize-types";
+import {StockPojo, StockInstance} from "../../domain/sequelize-types";
 import models = require('../../domain/sequelize-models');
 import Q = require('q');
 import {StockRepository} from "../../repository/StockRepository";
+import {StockDto} from "../../dto/StockDto";
 
 let fs = require('fs');
 let parse = require('csv-parse');
 let path = require('path');
 
 export class StockServiceImpl implements StockService {
-
     private stockRepository : StockRepository = new StockRepository();
 
     /**
@@ -17,10 +17,10 @@ export class StockServiceImpl implements StockService {
      * @param file
      * @returns {Promise<StockPojo[]>|Promise<T>}
      */
-    public importStocksByCSVFile(file : string) : Q.Promise<StockPojo[]> {
+    public importStocksByCSVFile(file : string) : Q.Promise<StockDto[]> {
         let self : StockServiceImpl = this;
-        let deferred : Q.Deferred<StockPojo[]> = Q.defer<StockPojo[]>();
-        let stockPojos : StockPojo[] = [];
+        let deferred : Q.Deferred<StockDto[]> = Q.defer<StockDto[]>();
+        let stockDtos : StockDto[] = [];
 
         this.loadFile(file)
             .then((data : any) => {
@@ -48,10 +48,10 @@ export class StockServiceImpl implements StockService {
                             console.log("ALL RECORDS IMPORTED");
                             results.forEach( each => {
                                 if ( each.state === "fulfilled") {
-                                    stockPojos.push( each.value.dataValues );
+                                    stockDtos.push( new StockDto(each.value) );
                                 }
                             });
-                            deferred.resolve(stockPojos);
+                            deferred.resolve(stockDtos);
                         })
                         .catch(error => {
                             deferred.reject(error);
@@ -71,9 +71,22 @@ export class StockServiceImpl implements StockService {
      * @param phrase
      * @returns {Promise<StockPojo[]>|Promise<T>}
      */
-    public findStocksByWildCard(phrase : string) : Q.Promise<StockPojo[]> {
-        let deferred : Q.Deferred<StockPojo[]> = Q.defer<StockPojo[]>();
-        deferred.resolve(null);
+    public findStocksByWildCard(phrase : string) : Q.Promise<StockDto[]> {
+        let self : StockServiceImpl = this;
+        let deferred : Q.Deferred<StockDto[]> = Q.defer<StockDto[]>();
+
+        self.stockRepository.findByWildCard( phrase )
+            .then( ( results : StockInstance[] ) => {
+                let stockDtos : StockDto[] = [];
+                results.forEach( ( each : StockInstance ) => {
+                    stockDtos.push( new StockDto( each ) );
+                });
+                deferred.resolve( stockDtos );
+            })
+            .catch( (error : Error) => {
+                deferred.reject( error );
+            })
+
         return deferred.promise;
     }
 

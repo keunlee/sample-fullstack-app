@@ -4,6 +4,7 @@
   "ambientDependencies": {
     "bluebird": "registry:dt/bluebird#2.0.0+20160209044412",
     "hapi": "registry:dt/hapi#13.0.0+20160224204942",
+    "joi": "registry:dt/joi#4.6.0+20160316155526",
     "lodash": "registry:dt/lodash#3.10.0+20160314033737",
     "node": "registry:dt/node#4.0.0+20160316042000",
     "q": "registry:dt/q#0.0.0+20160215162030",
