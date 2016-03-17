@@ -12,7 +12,6 @@
     "noLib": false,
     "preserveConstEnums": true,
     "suppressImplicitAnyIndexErrors": true
-    // "moduleResolution": "node"
   },
   "exclude": [
     "node_modules",
