@@ -2,6 +2,7 @@ import {StockService} from "../StockService";
 import {StockPojo} from "../../domain/sequelize-types";
 import models = require('../../domain/sequelize-models');
 import Q = require('q');
+import {StockRepository} from "../../repository/StockRepository";
 
 let fs = require('fs');
 let parse = require('csv-parse');
@@ -9,13 +10,17 @@ let path = require('path');
 
 export class StockServiceImpl implements StockService {
 
+    private stockRepository : StockRepository = new StockRepository();
+
     /**
      *
      * @param file
      * @returns {Promise<StockPojo[]>|Promise<T>}
      */
     public importStocksByCSVFile(file : string) : Q.Promise<StockPojo[]> {
+        let self : StockServiceImpl = this;
         let deferred : Q.Deferred<StockPojo[]> = Q.defer<StockPojo[]>();
+        let stockPojos : StockPojo[] = [];
 
         this.loadFile(file)
             .then((data : any) => {
@@ -35,13 +40,18 @@ export class StockServiceImpl implements StockService {
                             summary : item[7]
                         };
 
-                        createPromises.push(models.StockModel.create(stock));
+                        createPromises.push( self.stockRepository.create(stock));
                     }
 
                     Q.allSettled(createPromises)
-                        .then(result => {
-                            console.log("ALL RECORDS SAVED");
-                            deferred.resolve(null);
+                        .then( (results : Q.PromiseState<any>[]) => {
+                            console.log("ALL RECORDS IMPORTED");
+                            results.forEach( each => {
+                                if ( each.state === "fulfilled") {
+                                    stockPojos.push( each.value.dataValues );
+                                }
+                            });
+                            deferred.resolve(stockPojos);
                         })
                         .catch(error => {
                             deferred.reject(error);
