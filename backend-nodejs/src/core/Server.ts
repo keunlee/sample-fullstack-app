@@ -41,8 +41,8 @@ export class Server {
         });
 
         this.config = require('rc')(packageJson.name, {
-            port: 3000,
-            basePath: 'http://localhost:3000'
+            port: 8080,
+            basePath: 'http://localhost:8080'
         });
 
         this.hapiServer.connection({ port: this.config.port, routes: { cors: true } });
