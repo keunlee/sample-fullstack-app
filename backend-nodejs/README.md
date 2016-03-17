@@ -15,12 +15,12 @@ To install the above, I highly recommend using a node version manager (i.e. http
 * typings `npm install -g typings`
 * grunt-cli `npm install -g grunt-cli`
 
-### Install npm and typscript packages
+### Install npm and typscript Packages
 
 * `npm install`
 * `typings install`
 
-### Build Typescript sources
+### Build Typescript Sources
 
 The following should lint and transpile typescript sources to javascript (there should be no errors)
 
