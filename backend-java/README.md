@@ -17,7 +17,7 @@ You will need the following things properly installed on your computer.
 
 1. From the commandline, change the current working directory to the folder `backend-java`. This is the root directory for the java backend and you should see a pom file located in this directory.
 2. Run: `mvn clean compile package`
-3. Verify the existence of directory: `backend/target` (i.e. `ls`)
+3. Verify the existence of directory: `backend-java/target` (i.e. `ls`)
 3. Run: `java -jar target/exercise-1.0-SNAPSHOT.jar import --file src/main/resources/data/nyse.csv`
 4. Run: `java -jar target/exercise-1.0-SNAPSHOT.jar import --file src/main/resources/data/nasdaq.csv`
 5. Run: `java -jar target/exercise-1.0-SNAPSHOT.jar import --file src/main/resources/data/amex.csv`
