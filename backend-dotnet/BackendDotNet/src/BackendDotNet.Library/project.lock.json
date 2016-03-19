@@ -1,0 +1,92 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    "DNX,Version=v4.5.1": {
+      "Iesi.Collections/4.0.0.4000": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Iesi.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Iesi.Collections.dll": {}
+        }
+      },
+      "NHibernate/4.0.4.4000": {
+        "type": "package",
+        "dependencies": {
+          "Iesi.Collections": "[4.0.0, 5.0.0)"
+        },
+        "compile": {
+          "lib/net40/NHibernate.dll": {}
+        },
+        "runtime": {
+          "lib/net40/NHibernate.dll": {}
+        }
+      },
+      "Ninject.Mono/3.0.1.13": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Ninject.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Iesi.Collections/4.0.0.4000": {
+      "type": "package",
+      "sha512": "fLQKwZovMOhjte47Op+2YWLpmncQ/siA7hOdmG2eBLTFjp81s+gGkkGnDetOhBqYnmWK8g2kyx1DP9uNaJ68Ew==",
+      "files": [
+        "Iesi.Collections.4.0.0.4000.nupkg",
+        "Iesi.Collections.4.0.0.4000.nupkg.sha512",
+        "Iesi.Collections.nuspec",
+        "lib/net40/Iesi.Collections.dll",
+        "lib/net40/Iesi.Collections.xml"
+      ]
+    },
+    "NHibernate/4.0.4.4000": {
+      "type": "package",
+      "sha512": "jAKwpGLeGai8KWj1e3p1K882vlZUJaQeH4RTuscKTyXhsEsiQEe2uKs9S3bY91aPyygMiPXg1CyRopi1K+e5aA==",
+      "files": [
+        "ConfigurationTemplates/FireBird.cfg.xml",
+        "ConfigurationTemplates/MSSQL.cfg.xml",
+        "ConfigurationTemplates/MySql.cfg.xml",
+        "ConfigurationTemplates/Oracle.cfg.xml",
+        "ConfigurationTemplates/PostgreSQL.cfg.xml",
+        "ConfigurationTemplates/SQLite.cfg.xml",
+        "ConfigurationTemplates/SybaseASE.cfg.xml",
+        "ConfigurationTemplates/SybaseSQLAnywhere.cfg.xml",
+        "lib/net40/NHibernate.dll",
+        "lib/net40/NHibernate.xml",
+        "NHibernate.4.0.4.4000.nupkg",
+        "NHibernate.4.0.4.4000.nupkg.sha512",
+        "NHibernate.license.txt",
+        "NHibernate.nuspec",
+        "NHibernate.readme.html",
+        "NHibernate.releasenotes.txt",
+        "nhibernate-configuration.xsd",
+        "nhibernate-mapping.xsd"
+      ]
+    },
+    "Ninject.Mono/3.0.1.13": {
+      "type": "package",
+      "sha512": "RN+UYWxRFR4vFixxko17ScercVt7NERm5j6zwNEp7w/F1QUMkY1YXI0dBabxg7YdZvHDFIhTnZLX+XYGjf0DKw==",
+      "files": [
+        "lib/net40/Ninject.dll",
+        "Ninject.Mono.3.0.1.13.nupkg",
+        "Ninject.Mono.3.0.1.13.nupkg.sha512",
+        "Ninject.Mono.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "Ninject.Mono >= 3.0.1.13",
+      "NHibernate >= 4.0.4.4000"
+    ],
+    "DNX,Version=v4.5.1": []
+  }
+}

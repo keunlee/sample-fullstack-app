@@ -1,0 +1,32 @@
+﻿<Properties StartupItem="src/BackendDotNet.CLI/BackendDotNet.CLI.xproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="BackendDotNet|dnx451" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/BackendDotNet.Web/project.json">
+    <Files>
+      <File FileName="src/BackendDotNet.CLI/Program.cs" Line="13" Column="1" />
+      <File FileName="src/BackendDotNet.Library/MyClass.cs" Line="9" Column="4" />
+      <File FileName="src/BackendDotNet.Web/project.json" Line="1" Column="1" />
+      <File FileName="src/BackendDotNet.Library/project.json" Line="10" Column="20" />
+      <File FileName="src/BackendDotNet.CLI/project.json" Line="14" Column="3" />
+      <File FileName="src/BackendDotNet.Web/Startup.cs" Line="10" Column="24" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BackendDotNet" expanded="True">
+            <Node name="src" expanded="True">
+              <Node name="BackendDotNet.CLI" expanded="True" />
+              <Node name="BackendDotNet.Library" expanded="True" />
+              <Node name="BackendDotNet.Web" expanded="True">
+                <Node name="project.json" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
