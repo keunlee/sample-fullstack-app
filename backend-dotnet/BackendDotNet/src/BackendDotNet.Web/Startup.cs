@@ -7,24 +7,18 @@ using Microsoft.AspNet.Http;
 using Microsoft.Extensions.DependencyInjection;
 using BackendDotNet;
 
-namespace BackendDotNet
-{
-	public class Startup
-	{
-		public void ConfigureServices (IServiceCollection services)
-		{
+namespace BackendDotNet {
+	public class Startup {
+		public void ConfigureServices(IServiceCollection services) {
 		}
 
-		public void Configure (IApplicationBuilder app)
-		{
+		public void Configure(IApplicationBuilder app) {
 			app.Run (async (context) => {
 				await context.Response.WriteAsync ("Hello World!");
 			});
 		}
 
-		public static void Main (string[] args)
-		{
-			
+		public static void Main(string[] args) {
 			WebApplication.Run<Startup> (args);
 		}
 	}

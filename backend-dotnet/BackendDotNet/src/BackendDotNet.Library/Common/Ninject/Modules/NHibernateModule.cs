@@ -1,7 +1,8 @@
 ﻿using NHibernate;
 using Ninject;
 using Ninject.Modules;
-//using Tahzoo.ERP.Harvest.ServiceLibrary.Common.Ninject;
+
+//using BackendDotNet.Common.Ninject;
 
 namespace BackendDotNet.Common.Ninject.Modules {
 	public class NHibernateModule : NinjectModule {

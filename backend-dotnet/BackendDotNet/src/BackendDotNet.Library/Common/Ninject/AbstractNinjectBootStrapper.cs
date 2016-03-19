@@ -14,7 +14,7 @@ namespace BackendDotNet.Common.Ninject {
 		/// Initializes a new instance of the <see cref="BackendDotNet.Common.Ninject.AbstractNinjectBootStrapper"/> class.
 		/// </summary>
 		public AbstractNinjectBootStrapper () {
-			CreateKernel();
+			CreateKernel ();
 		}
 
 		/// <summary>
@@ -39,6 +39,6 @@ namespace BackendDotNet.Common.Ninject {
 		/// Registers the ninject modules.
 		/// </summary>
 		/// <param name="kernel">Kernel.</param>
-		protected abstract void RegisterNinjectModules( IKernel kernel );
+		protected abstract void RegisterNinjectModules(IKernel kernel);
 	}
 }

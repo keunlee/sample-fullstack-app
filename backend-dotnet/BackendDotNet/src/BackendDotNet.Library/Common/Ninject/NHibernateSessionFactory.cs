@@ -22,7 +22,7 @@ namespace BackendDotNet.Common.Ninject {
 		/// Creates the database schema.
 		/// </summary>
 		/// <param name="cfg">Cfg.</param>
-		public static void CreateDatabaseSchema ( Configuration cfg) {
+		public static void CreateDatabaseSchema(Configuration cfg) {
 			//This will drop your database, be careful here not to run in production,
 			//unless you want to drop your database
 			new SchemaExport (cfg).Drop (true, true);
@@ -59,7 +59,7 @@ namespace BackendDotNet.Common.Ninject {
 		/// Gets the mappings.
 		/// </summary>
 		/// <returns>The mappings.</returns>
-		private HbmMapping GetMappings () {
+		private HbmMapping GetMappings() {
 			ModelMapper mapper = new ModelMapper ();
 			mapper.AddMappings (Assembly.Load ("Tahzoo.ERP.Harvest.ServiceLibrary").GetTypes ());
 			HbmMapping mapping = mapper.CompileMappingForAllExplicitlyAddedEntities ();

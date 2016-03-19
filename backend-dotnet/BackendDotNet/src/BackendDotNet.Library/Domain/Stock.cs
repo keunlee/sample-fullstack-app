@@ -6,47 +6,56 @@ using BackendDotNet.Common.NHibernate;
 namespace BackendDotNet.Domain {
 	public class Stock : IEntityKey<long> {
 		public virtual long Id { get; set; }
-		public virtual string Industry { get; set;}
-		public virtual string IpoYear { get; set;}
-		public virtual string LastSale { get; set;}
-		public virtual string MarketCap { get; set;}
-		public virtual string Name { get; set;}
-		public virtual string Sector { get; set;}
-		public virtual string Summary { get; set;}
-		public virtual string Symbol { get; set;}
 
-		public Stock () {}
+		public virtual string Industry { get; set; }
+
+		public virtual string IpoYear { get; set; }
+
+		public virtual string LastSale { get; set; }
+
+		public virtual string MarketCap { get; set; }
+
+		public virtual string Name { get; set; }
+
+		public virtual string Sector { get; set; }
+
+		public virtual string Summary { get; set; }
+
+		public virtual string Symbol { get; set; }
+
+		public Stock () {
+		}
 	}
 
 	public class StockMap : ClassMapping<Stock> {
-		public StockMap() {
-			Table("stock");
+		public StockMap () {
+			Table ("stock");
 			Id<long> (x => x.Id, m => {
-				m.Column("id");
+				m.Column ("id");
 			});
 			Property<string> (x => x.Industry, m => {
-				m.Column("industry");
+				m.Column ("industry");
 			});
 			Property<string> (x => x.IpoYear, m => {
-				m.Column("ipoyear");
+				m.Column ("ipoyear");
 			});
 			Property<string> (x => x.LastSale, m => {
-				m.Column("lastsale");
+				m.Column ("lastsale");
 			});
 			Property<string> (x => x.MarketCap, m => {
-				m.Column("marketcap");
+				m.Column ("marketcap");
 			});
 			Property<string> (x => x.Name, m => {
-				m.Column("name");
+				m.Column ("name");
 			});
 			Property<string> (x => x.Sector, m => {
-				m.Column("sector");
+				m.Column ("sector");
 			});
 			Property<string> (x => x.Summary, m => {
-				m.Column("summary");
+				m.Column ("summary");
 			});
 			Property<string> (x => x.Symbol, m => {
-				m.Column("symbol");
+				m.Column ("symbol");
 			});
 		}
 	}

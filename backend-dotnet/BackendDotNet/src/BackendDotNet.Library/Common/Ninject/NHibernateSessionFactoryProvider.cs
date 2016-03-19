@@ -18,7 +18,7 @@ namespace BackendDotNet.Common.Ninject {
 		/// </summary>
 		/// <returns>The instance.</returns>
 		/// <param name="context">Context.</param>
-		protected override ISessionFactory CreateInstance (IContext context) {
+		protected override ISessionFactory CreateInstance(IContext context) {
 			var sessionFactory = new NHibernateSessionFactory ();
 			return sessionFactory.GetSessionFactory ();
 		}

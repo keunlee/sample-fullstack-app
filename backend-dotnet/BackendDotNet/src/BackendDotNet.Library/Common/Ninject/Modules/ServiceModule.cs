@@ -1,6 +1,7 @@
 ﻿using Ninject.Modules;
-//using Tahzoo.ERP.Harvest.ServiceLibrary.Service;
-//using Tahzoo.ERP.Harvest.ServiceLibrary.Service.Implementation;
+
+//using BackendDotNet.Library.Service;
+//using BackendDotNet.Library.Service.Implementation;
 
 namespace BackendDotNet.Common.Ninject.Modules {
 	public class ServiceModule : NinjectModule {

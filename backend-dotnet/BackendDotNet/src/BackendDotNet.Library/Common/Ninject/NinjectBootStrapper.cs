@@ -6,15 +6,15 @@ using BackendDotNet.Common.Ninject.Modules;
 
 namespace BackendDotNet.Common.Ninject {
 	public class NinjectBootStrapper : AbstractNinjectBootStrapper {
-		public NinjectBootStrapper () : base() {
+		public NinjectBootStrapper () : base () {
 		}
 
 		#region implemented abstract members of AbstractNinjectBootStrapper
 
-		protected override void RegisterNinjectModules (IKernel kernel) {
+		protected override void RegisterNinjectModules(IKernel kernel) {
 			var modules = new List<INinjectModule> {
 				new NHibernateModule (),
-				new ServiceModule()
+				new ServiceModule ()
 			};
 			kernel.Load (modules);
 		}

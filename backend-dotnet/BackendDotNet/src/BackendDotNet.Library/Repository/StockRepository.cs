@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace BackendDotNet.Repository {
 	public class StockRepository : Repository<long, Stock> {
-		public StockRepository ( ISession session ) : base(session) {
+		public StockRepository (ISession session) : base (session) {
 		}
 	}
 }
