@@ -11,7 +11,7 @@ To install the above, I highly recommend using a node version manager (i.e. http
 
 ### Prerequisites
 
-* typescript >= 1.8 `npm install -g typescript@next`
+* typescript >= 1.8 `npm install -g typescript`
 * typings `npm install -g typings`
 * grunt-cli `npm install -g grunt-cli`
 
