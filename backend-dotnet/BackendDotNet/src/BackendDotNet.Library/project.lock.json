@@ -33,6 +33,70 @@
           "lib/net40/Ninject.dll": {}
         }
       }
+    },
+    "DNX,Version=v4.5.1/osx.10.11-x86": {
+      "Iesi.Collections/4.0.0.4000": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Iesi.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Iesi.Collections.dll": {}
+        }
+      },
+      "NHibernate/4.0.4.4000": {
+        "type": "package",
+        "dependencies": {
+          "Iesi.Collections": "[4.0.0, 5.0.0)"
+        },
+        "compile": {
+          "lib/net40/NHibernate.dll": {}
+        },
+        "runtime": {
+          "lib/net40/NHibernate.dll": {}
+        }
+      },
+      "Ninject.Mono/3.0.1.13": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Ninject.dll": {}
+        }
+      }
+    },
+    "DNX,Version=v4.5.1/osx.10.11-x64": {
+      "Iesi.Collections/4.0.0.4000": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Iesi.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Iesi.Collections.dll": {}
+        }
+      },
+      "NHibernate/4.0.4.4000": {
+        "type": "package",
+        "dependencies": {
+          "Iesi.Collections": "[4.0.0, 5.0.0)"
+        },
+        "compile": {
+          "lib/net40/NHibernate.dll": {}
+        },
+        "runtime": {
+          "lib/net40/NHibernate.dll": {}
+        }
+      },
+      "Ninject.Mono/3.0.1.13": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Ninject.dll": {}
+        }
+      }
     }
   },
   "libraries": {
