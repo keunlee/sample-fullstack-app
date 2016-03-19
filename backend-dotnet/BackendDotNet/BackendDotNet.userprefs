@@ -1,13 +1,14 @@
 ﻿<Properties StartupItem="src/BackendDotNet.CLI/BackendDotNet.CLI.xproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="BackendDotNet|dnx451" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/BackendDotNet.Web/project.json">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="BackendDotNet.CLI|dnx451" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/BackendDotNet.Library/Repository/StockRepository.cs">
     <Files>
-      <File FileName="src/BackendDotNet.CLI/Program.cs" Line="13" Column="1" />
-      <File FileName="src/BackendDotNet.Library/MyClass.cs" Line="9" Column="4" />
-      <File FileName="src/BackendDotNet.Web/project.json" Line="1" Column="1" />
-      <File FileName="src/BackendDotNet.Library/project.json" Line="10" Column="20" />
-      <File FileName="src/BackendDotNet.CLI/project.json" Line="14" Column="3" />
-      <File FileName="src/BackendDotNet.Web/Startup.cs" Line="10" Column="24" />
+      <File FileName="src/BackendDotNet.Library/Common/NHibernate/IEntityKey.cs" Line="1" Column="1" />
+      <File FileName="src/BackendDotNet.Library/Common/NHibernate/IPersistRepository.cs" Line="10" Column="2" />
+      <File FileName="src/BackendDotNet.Library/Common/NHibernate/IReadOnlyRepository.cs" Line="16" Column="1" />
+      <File FileName="src/BackendDotNet.CLI/Program.cs" Line="10" Column="1" />
+      <File FileName="src/BackendDotNet.Library/Common/Ninject/Modules/NHibernateModule.cs" Line="19" Column="1" />
+      <File FileName="src/BackendDotNet.Library/Common/Ninject/Modules/ServiceModule.cs" Line="16" Column="1" />
+      <File FileName="src/BackendDotNet.Library/Repository/StockRepository.cs" Line="15" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,10 +16,22 @@
           <Node name="BackendDotNet" expanded="True">
             <Node name="src" expanded="True">
               <Node name="BackendDotNet.CLI" expanded="True" />
-              <Node name="BackendDotNet.Library" expanded="True" />
-              <Node name="BackendDotNet.Web" expanded="True">
-                <Node name="project.json" selected="True" />
+              <Node name="BackendDotNet.Library" expanded="True">
+                <Node name="Common" expanded="True">
+                  <Node name="NHibernate" expanded="True" />
+                  <Node name="Ninject" expanded="True">
+                    <Node name="Modules" expanded="True" />
+                  </Node>
+                </Node>
+                <Node name="Domain" expanded="True" />
+                <Node name="Repository" expanded="True">
+                  <Node name="StockRepository.cs" selected="True" />
+                </Node>
               </Node>
+              <Node name="BackendDotNet.Tests" expanded="True">
+                <Node name="Tests" expanded="True" />
+              </Node>
+              <Node name="BackendDotNet.Web" expanded="True" />
             </Node>
           </Node>
         </State>

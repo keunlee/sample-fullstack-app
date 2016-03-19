@@ -6,7 +6,6 @@ using Ninject.Modules;
 
 namespace BackendDotNet.Common.Ninject.Modules {
 	public class NHibernateModule : NinjectModule {
-
 		/// <summary>
 		/// Load this instance.
 		/// </summary>
