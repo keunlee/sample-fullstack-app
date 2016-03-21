@@ -11,6 +11,15 @@
           "Ninject.Mono": "3.0.1.13"
         }
       },
+      "CommandLineParser/2.0.275-beta": {
+        "type": "package",
+        "compile": {
+          "lib/net45/CommandLine.dll": {}
+        },
+        "runtime": {
+          "lib/net45/CommandLine.dll": {}
+        }
+      },
       "Iesi.Collections/4.0.0.4000": {
         "type": "package",
         "compile": {
@@ -49,6 +58,15 @@
         "dependencies": {
           "NHibernate": "4.0.4.4000",
           "Ninject.Mono": "3.0.1.13"
+        }
+      },
+      "CommandLineParser/2.0.275-beta": {
+        "type": "package",
+        "compile": {
+          "lib/net45/CommandLine.dll": {}
+        },
+        "runtime": {
+          "lib/net45/CommandLine.dll": {}
         }
       },
       "Iesi.Collections/4.0.0.4000": {
@@ -91,6 +109,15 @@
           "Ninject.Mono": "3.0.1.13"
         }
       },
+      "CommandLineParser/2.0.275-beta": {
+        "type": "package",
+        "compile": {
+          "lib/net45/CommandLine.dll": {}
+        },
+        "runtime": {
+          "lib/net45/CommandLine.dll": {}
+        }
+      },
       "Iesi.Collections/4.0.0.4000": {
         "type": "package",
         "compile": {
@@ -127,6 +154,19 @@
     "BackendDotNet.Library/1.0.0": {
       "type": "project",
       "path": "../BackendDotNet.Library/project.json"
+    },
+    "CommandLineParser/2.0.275-beta": {
+      "type": "package",
+      "sha512": "GwuGq7q3kM8ymbPXj3ZNMGY9YKDDPxL3VM3kvTQ+VKqz2fUbvgaSfeRKtAObq/V5yjLw2ur64djBE0L52Pf2dw==",
+      "files": [
+        "CommandLineParser.2.0.275-beta.nupkg",
+        "CommandLineParser.2.0.275-beta.nupkg.sha512",
+        "CommandLineParser.nuspec",
+        "lib/net40/CommandLine.dll",
+        "lib/net40/CommandLine.XML",
+        "lib/net45/CommandLine.dll",
+        "lib/net45/CommandLine.XML"
+      ]
     },
     "Iesi.Collections/4.0.0.4000": {
       "type": "package",
@@ -176,7 +216,8 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "BackendDotNet.Library >= 1.0.0-*"
+      "BackendDotNet.Library >= 1.0.0-*",
+      "CommandLineParser >= 2.0.275-beta"
     ],
     "DNX,Version=v4.5.1": []
   }

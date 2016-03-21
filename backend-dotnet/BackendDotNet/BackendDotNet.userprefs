@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="src/BackendDotNet.CLI/BackendDotNet.CLI.xproj">
+﻿<Properties StartupItem="src/BackendDotNet.CLI/BackendDotNet.CLI.xproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="BackendDotNet.CLI|Profile" />
   <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

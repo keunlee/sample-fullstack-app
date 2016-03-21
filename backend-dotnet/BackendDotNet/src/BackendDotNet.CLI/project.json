@@ -1,24 +1,25 @@
-﻿{
-	"version": "1.0.0-*",
-	"description": "BackendDotNet Console Application",
-	"authors": [ "" ],
-	"tags": [ "" ],
-	"projectUrl": "",
-	"licenseUrl": "",
-
-	"compilationOptions": {
-		"emitEntryPoint": true
-	},
-
-	"dependencies": {
-		"BackendDotNet.Library" : "1.0.0-*"
-	},
-
-	"commands": {
-		"BackendDotNet.CLI" : "BackendDotNet.CLI"
-	},
-
-	"frameworks" : {
-		"dnx451": { }
-	}
+{
+  "version": "1.0.0-*",
+  "description": "BackendDotNet Console Application",
+  "authors": [
+    ""
+  ],
+  "tags": [
+    ""
+  ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "compilationOptions": {
+    "emitEntryPoint": true
+  },
+  "dependencies": {
+    "BackendDotNet.Library": "1.0.0-*",
+    "CommandLineParser": "2.0.275-beta"
+  },
+  "commands": {
+    "BackendDotNet.CLI": "BackendDotNet.CLI"
+  },
+  "frameworks": {
+    "dnx451": {}
+  }
 }
