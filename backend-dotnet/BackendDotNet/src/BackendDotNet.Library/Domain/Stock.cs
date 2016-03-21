@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using NHibernate.Mapping.ByCode.Conformist;
 using NHibernate.Mapping.ByCode;
 using BackendDotNet.Common.NHibernate;

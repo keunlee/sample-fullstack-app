@@ -1,4 +1,4 @@
-﻿using Ninject.Modules;
+using Ninject.Modules;
 
 //using BackendDotNet.Library.Service;
 //using BackendDotNet.Library.Service.Implementation;

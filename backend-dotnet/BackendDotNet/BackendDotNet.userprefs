@@ -1,8 +1,15 @@
 ﻿<Properties StartupItem="src/BackendDotNet.CLI/BackendDotNet.CLI.xproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="BackendDotNet.CLI|Profile" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/BackendDotNet.CLI/Program.cs">
+    <Files>
+      <File FileName="src/BackendDotNet.CLI/Support/CLIOptions.cs" Line="10" Column="2" />
+      <File FileName="src/BackendDotNet.CLI/Program.cs" Line="23" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <RunToCursorBreakpoint file="/Users/keunsuklee/Clients/KP/sample-fullstack-app/backend-dotnet/BackendDotNet/src/BackendDotNet.CLI/Program.cs" line="14" column="18" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

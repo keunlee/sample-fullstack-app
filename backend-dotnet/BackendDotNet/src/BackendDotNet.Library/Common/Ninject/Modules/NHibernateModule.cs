@@ -1,4 +1,4 @@
-﻿using NHibernate;
+using NHibernate;
 using Ninject;
 using Ninject.Modules;
 

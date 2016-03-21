@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Ninject;
 using Ninject.Modules;
 using BackendDotNet.Common.Ninject;

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using BackendDotNet.Common.NHibernate;
 using BackendDotNet.Domain;
 using NHibernate;

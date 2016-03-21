@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Cfg.MappingSchema;
