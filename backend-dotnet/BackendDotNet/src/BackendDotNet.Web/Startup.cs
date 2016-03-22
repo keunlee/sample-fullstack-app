@@ -6,10 +6,21 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
 using Microsoft.Extensions.DependencyInjection;
 using BackendDotNet;
+using BackendDotNet.Core;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 
 namespace BackendDotNet {
 	public class Startup {
-		public void ConfigureServices(IServiceCollection services) {
+		public IServiceProvider ConfigureServices(IServiceCollection services) {
+			services.AddMvc ();
+
+			// Add Autofac
+			var containerBuilder = new ContainerBuilder();
+			containerBuilder.RegisterModule<DIModule>();
+			containerBuilder.Populate(services);
+			var container = containerBuilder.Build();
+			return container.Resolve<IServiceProvider>();
 		}
 
 		public void Configure(IApplicationBuilder app) {

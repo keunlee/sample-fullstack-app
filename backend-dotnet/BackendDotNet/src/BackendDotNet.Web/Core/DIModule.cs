@@ -1,8 +1,11 @@
 ﻿using System;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 
-namespace BackendDotNet {
-	public class DIModule {
-		public DIModule () {
+namespace BackendDotNet.Core {
+	public class DIModule : Module {
+		protected override void Load(ContainerBuilder builder) {
+			// builder.RegisterType<CharacterRepository>().As<ICharacterRepository>();
 		}
 	}
 }
