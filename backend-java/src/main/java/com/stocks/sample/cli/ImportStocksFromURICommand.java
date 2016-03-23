@@ -14,9 +14,7 @@ public class ImportStocksFromURICommand implements CommandMarker {
     private StockService stockService;
 
     @CliCommand(value = "import", help = "import --file <valid file location>")
-    public void importStocks(
-            @CliOption(key = {"file"}, mandatory = false) String file
-    ) {
+    public void importStocks(@CliOption(key = {"file"}, mandatory = false) String file) {
         try {
             stockService.importStocksByCSVFile(file);
         } catch (Exception e) {
