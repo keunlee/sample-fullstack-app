@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Reflection;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Cfg.MappingSchema;
-using NHibernate.Tool.hbm2ddl;
 using NHibernate.Mapping.ByCode;
-using System.Reflection;
+using NHibernate.Tool.hbm2ddl;
 
 namespace BackendDotNet.Common.NHibernate {
 	public class NHibernateSessionFactory {

@@ -13,6 +13,7 @@ namespace BackendDotNet.Common.DepedencyInjection.Modules {
 				.Where(t => t.Name.EndsWith("Repository"))
 				.AsSelf()
 				.InstancePerLifetimeScope();
+			
 			builder.RegisterType<StockServiceImpl> ().As<IStockService> ();
 		}
 	}
