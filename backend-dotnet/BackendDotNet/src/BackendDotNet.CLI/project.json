@@ -14,12 +14,25 @@
   },
   "dependencies": {
     "BackendDotNet.Library": "1.0.0-*",
-    "CommandLineParser": "2.0.275-beta"
+    "CommandLineParser": "2.0.275-beta",
+    "Autofac": "4.0.0-rc1-177",
+    "Npgsql": "3.1.0-alpha6"
   },
   "commands": {
     "BackendDotNet.CLI": "BackendDotNet.CLI"
   },
   "frameworks": {
-    "dnx451": {}
-  }
+    "dnx451": {
+      "frameworkAssemblies": {
+        "System.Xml": "4.0.0.0",
+        "System.Xml.Linq": "4.0.0.0"
+      }
+    }
+  },
+  "scripts": {
+		"postbuild": [
+			"echo COPYING hibernate.cfg.xml resource file to output folder",
+			"cp hibernate.cfg.xml bin/Debug/dnx451"
+		]
+	}
 }

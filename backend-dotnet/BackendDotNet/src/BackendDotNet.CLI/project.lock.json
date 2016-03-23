@@ -3,13 +3,33 @@
   "version": 2,
   "targets": {
     "DNX,Version=v4.5.1": {
+      "Autofac/4.0.0-rc1-177": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Autofac.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Autofac.dll": {}
+        }
+      },
       "BackendDotNet.Library/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "NHibernate": "4.0.4.4000",
-          "Ninject.Mono": "3.0.1.13"
-        }
+          "Autofac": "4.0.0-rc1-177",
+          "CsvHelper": "2.13.5",
+          "NHibernate": "4.0.4.4000"
+        },
+        "frameworkAssemblies": [
+          "System.Xml",
+          "System.Xml.Linq"
+        ]
       },
       "CommandLineParser/2.0.275-beta": {
         "type": "package",
@@ -18,6 +38,15 @@
         },
         "runtime": {
           "lib/net45/CommandLine.dll": {}
+        }
+      },
+      "CsvHelper/2.13.5": {
+        "type": "package",
+        "compile": {
+          "lib/net20/CsvHelper.dll": {}
+        },
+        "runtime": {
+          "lib/net20/CsvHelper.dll": {}
         }
       },
       "Iesi.Collections/4.0.0.4000": {
@@ -41,24 +70,50 @@
           "lib/net40/NHibernate.dll": {}
         }
       },
-      "Ninject.Mono/3.0.1.13": {
+      "Npgsql/3.1.0-alpha6": {
         "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
         "compile": {
-          "lib/net40/Ninject.dll": {}
+          "lib/net45/Npgsql.dll": {}
         },
         "runtime": {
-          "lib/net40/Ninject.dll": {}
+          "lib/net45/Npgsql.dll": {}
         }
       }
     },
     "DNX,Version=v4.5.1/osx.10.11-x86": {
+      "Autofac/4.0.0-rc1-177": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Autofac.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Autofac.dll": {}
+        }
+      },
       "BackendDotNet.Library/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "NHibernate": "4.0.4.4000",
-          "Ninject.Mono": "3.0.1.13"
-        }
+          "Autofac": "4.0.0-rc1-177",
+          "CsvHelper": "2.13.5",
+          "NHibernate": "4.0.4.4000"
+        },
+        "frameworkAssemblies": [
+          "System.Xml",
+          "System.Xml.Linq"
+        ]
       },
       "CommandLineParser/2.0.275-beta": {
         "type": "package",
@@ -67,6 +122,15 @@
         },
         "runtime": {
           "lib/net45/CommandLine.dll": {}
+        }
+      },
+      "CsvHelper/2.13.5": {
+        "type": "package",
+        "compile": {
+          "lib/net20/CsvHelper.dll": {}
+        },
+        "runtime": {
+          "lib/net20/CsvHelper.dll": {}
         }
       },
       "Iesi.Collections/4.0.0.4000": {
@@ -90,24 +154,50 @@
           "lib/net40/NHibernate.dll": {}
         }
       },
-      "Ninject.Mono/3.0.1.13": {
+      "Npgsql/3.1.0-alpha6": {
         "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
         "compile": {
-          "lib/net40/Ninject.dll": {}
+          "lib/net45/Npgsql.dll": {}
         },
         "runtime": {
-          "lib/net40/Ninject.dll": {}
+          "lib/net45/Npgsql.dll": {}
         }
       }
     },
     "DNX,Version=v4.5.1/osx.10.11-x64": {
+      "Autofac/4.0.0-rc1-177": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Autofac.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Autofac.dll": {}
+        }
+      },
       "BackendDotNet.Library/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "NHibernate": "4.0.4.4000",
-          "Ninject.Mono": "3.0.1.13"
-        }
+          "Autofac": "4.0.0-rc1-177",
+          "CsvHelper": "2.13.5",
+          "NHibernate": "4.0.4.4000"
+        },
+        "frameworkAssemblies": [
+          "System.Xml",
+          "System.Xml.Linq"
+        ]
       },
       "CommandLineParser/2.0.275-beta": {
         "type": "package",
@@ -116,6 +206,15 @@
         },
         "runtime": {
           "lib/net45/CommandLine.dll": {}
+        }
+      },
+      "CsvHelper/2.13.5": {
+        "type": "package",
+        "compile": {
+          "lib/net20/CsvHelper.dll": {}
+        },
+        "runtime": {
+          "lib/net20/CsvHelper.dll": {}
         }
       },
       "Iesi.Collections/4.0.0.4000": {
@@ -139,13 +238,19 @@
           "lib/net40/NHibernate.dll": {}
         }
       },
-      "Ninject.Mono/3.0.1.13": {
+      "Npgsql/3.1.0-alpha6": {
         "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
         "compile": {
-          "lib/net40/Ninject.dll": {}
+          "lib/net45/Npgsql.dll": {}
         },
         "runtime": {
-          "lib/net40/Ninject.dll": {}
+          "lib/net45/Npgsql.dll": {}
         }
       }
     }
@@ -154,6 +259,23 @@
     "BackendDotNet.Library/1.0.0": {
       "type": "project",
       "path": "../BackendDotNet.Library/project.json"
+    },
+    "Autofac/4.0.0-rc1-177": {
+      "type": "package",
+      "sha512": "cTSfTca0qWl3Zd68iMl2bH8e4RyGL/Q7EUT0PmAzCSoitSlrHu4zmByhP/f+KGGSuRqWHFYoMEEOanvTviEr4g==",
+      "files": [
+        "Autofac.4.0.0-rc1-177.nupkg",
+        "Autofac.4.0.0-rc1-177.nupkg.sha512",
+        "Autofac.nuspec",
+        "lib/dnxcore50/Autofac.dll",
+        "lib/dnxcore50/Autofac.xml",
+        "lib/dotnet5.2/Autofac.dll",
+        "lib/dotnet5.2/Autofac.xml",
+        "lib/net45/Autofac.dll",
+        "lib/net45/Autofac.xml",
+        "lib/win/Autofac.dll",
+        "lib/win/Autofac.xml"
+      ]
     },
     "CommandLineParser/2.0.275-beta": {
       "type": "package",
@@ -166,6 +288,27 @@
         "lib/net40/CommandLine.XML",
         "lib/net45/CommandLine.dll",
         "lib/net45/CommandLine.XML"
+      ]
+    },
+    "CsvHelper/2.13.5": {
+      "type": "package",
+      "sha512": "fC8DPi/YTcZ8uXFiAeuT9EpsR2TE5cSJ2jg/4tht/Oen6az/djebpYoCQEtI33RfNrSZ533SedOknlWtUTX3fw==",
+      "files": [
+        "CsvHelper.2.13.5.nupkg",
+        "CsvHelper.2.13.5.nupkg.sha512",
+        "CsvHelper.nuspec",
+        "lib/net20/CsvHelper.dll",
+        "lib/net20/CsvHelper.pdb",
+        "lib/net20/CsvHelper.xml",
+        "lib/net35-client/CsvHelper.dll",
+        "lib/net35-client/CsvHelper.pdb",
+        "lib/net35-client/CsvHelper.xml",
+        "lib/net40-client/CsvHelper.dll",
+        "lib/net40-client/CsvHelper.pdb",
+        "lib/net40-client/CsvHelper.xml",
+        "lib/portable-net40+sl5+win8+wpa+wp8/CsvHelper.dll",
+        "lib/portable-net40+sl5+win8+wpa+wp8/CsvHelper.pdb",
+        "lib/portable-net40+sl5+win8+wpa+wp8/CsvHelper.xml"
       ]
     },
     "Iesi.Collections/4.0.0.4000": {
@@ -203,22 +346,37 @@
         "nhibernate-mapping.xsd"
       ]
     },
-    "Ninject.Mono/3.0.1.13": {
+    "Npgsql/3.1.0-alpha6": {
       "type": "package",
-      "sha512": "RN+UYWxRFR4vFixxko17ScercVt7NERm5j6zwNEp7w/F1QUMkY1YXI0dBabxg7YdZvHDFIhTnZLX+XYGjf0DKw==",
+      "sha512": "gYOozZ+PPgrw7zogHlBONFjZxNnagSWkDfVXZTamJy9zWRU/+O6pCHgEsEwsdENGaYC0RFvQUbDo5lIYA8kjpA==",
       "files": [
-        "lib/net40/Ninject.dll",
-        "Ninject.Mono.3.0.1.13.nupkg",
-        "Ninject.Mono.3.0.1.13.nupkg.sha512",
-        "Ninject.Mono.nuspec"
+        "app/project.json",
+        "app/rewrite-async",
+        "app/rewrite-async.cmd",
+        "lib/dnx452/Npgsql.dll",
+        "lib/dnx452/Npgsql.xml",
+        "lib/dnxcore50/Npgsql.dll",
+        "lib/dnxcore50/Npgsql.xml",
+        "lib/net45/Npgsql.dll",
+        "lib/net45/Npgsql.xml",
+        "lib/net452/Npgsql.dll",
+        "lib/net452/Npgsql.xml",
+        "Npgsql.3.1.0-alpha6.nupkg",
+        "Npgsql.3.1.0-alpha6.nupkg.sha512",
+        "Npgsql.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "": [
       "BackendDotNet.Library >= 1.0.0-*",
-      "CommandLineParser >= 2.0.275-beta"
+      "CommandLineParser >= 2.0.275-beta",
+      "Autofac >= 4.0.0-rc1-177",
+      "Npgsql >= 3.1.0-alpha6"
     ],
-    "DNX,Version=v4.5.1": []
+    "DNX,Version=v4.5.1": [
+      "fx/System.Xml >= 4.0.0",
+      "fx/System.Xml.Linq >= 4.0.0"
+    ]
   }
 }

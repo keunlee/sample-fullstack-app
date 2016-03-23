@@ -10,10 +10,16 @@
   "projectUrl": "",
   "licenseUrl": "",
   "dependencies": {
-    "Ninject.Mono": "3.0.1.13",
-    "NHibernate": "4.0.4.4000"
+    "NHibernate": "4.0.4.4000",
+    "CsvHelper": "2.13.5",
+	"Autofac": "4.0.0-rc1-177"
   },
   "frameworks": {
-    "dnx451": {}
+    "dnx451": {
+			      "frameworkAssemblies": {
+        "System.Xml": "4.0.0.0",
+        "System.Xml.Linq": "4.0.0.0"
+      }
+		}
   }
 }

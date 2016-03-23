@@ -41,8 +41,17 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "NHibernate": "4.0.4.4000",
-          "Ninject.Mono": "3.0.1.13"
+          "CsvHelper": "2.13.5",
+          "NHibernate": "4.0.4.4000"
+        }
+      },
+      "CsvHelper/2.13.5": {
+        "type": "package",
+        "compile": {
+          "lib/net20/CsvHelper.dll": {}
+        },
+        "runtime": {
+          "lib/net20/CsvHelper.dll": {}
         }
       },
       "Iesi.Collections/4.0.0.4000": {
@@ -1409,15 +1418,6 @@
         },
         "runtime": {
           "lib/net40/NHibernate.dll": {}
-        }
-      },
-      "Ninject.Mono/3.0.1.13": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Ninject.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Ninject.dll": {}
         }
       },
       "System.Collections/4.0.0": {
@@ -1671,8 +1671,17 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "NHibernate": "4.0.4.4000",
-          "Ninject.Mono": "3.0.1.13"
+          "CsvHelper": "2.13.5",
+          "NHibernate": "4.0.4.4000"
+        }
+      },
+      "CsvHelper/2.13.5": {
+        "type": "package",
+        "compile": {
+          "lib/net20/CsvHelper.dll": {}
+        },
+        "runtime": {
+          "lib/net20/CsvHelper.dll": {}
         }
       },
       "Iesi.Collections/4.0.0.4000": {
@@ -3041,15 +3050,6 @@
           "lib/net40/NHibernate.dll": {}
         }
       },
-      "Ninject.Mono/3.0.1.13": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Ninject.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Ninject.dll": {}
-        }
-      },
       "System.Collections/4.0.0": {
         "type": "package",
         "compile": {
@@ -3301,8 +3301,17 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
-          "NHibernate": "4.0.4.4000",
-          "Ninject.Mono": "3.0.1.13"
+          "CsvHelper": "2.13.5",
+          "NHibernate": "4.0.4.4000"
+        }
+      },
+      "CsvHelper/2.13.5": {
+        "type": "package",
+        "compile": {
+          "lib/net20/CsvHelper.dll": {}
+        },
+        "runtime": {
+          "lib/net20/CsvHelper.dll": {}
         }
       },
       "Iesi.Collections/4.0.0.4000": {
@@ -4674,15 +4683,6 @@
           "lib/net40/NHibernate.dll": {}
         }
       },
-      "Ninject.Mono/3.0.1.13": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Ninject.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Ninject.dll": {}
-        }
-      },
       "System.Collections/4.0.0": {
         "type": "package",
         "compile": {
@@ -4931,6 +4931,27 @@
         "lib/net451/Autofac.Extensions.DependencyInjection.xml",
         "lib/netcore50/Autofac.Extensions.DependencyInjection.dll",
         "lib/netcore50/Autofac.Extensions.DependencyInjection.xml"
+      ]
+    },
+    "CsvHelper/2.13.5": {
+      "type": "package",
+      "sha512": "fC8DPi/YTcZ8uXFiAeuT9EpsR2TE5cSJ2jg/4tht/Oen6az/djebpYoCQEtI33RfNrSZ533SedOknlWtUTX3fw==",
+      "files": [
+        "CsvHelper.2.13.5.nupkg",
+        "CsvHelper.2.13.5.nupkg.sha512",
+        "CsvHelper.nuspec",
+        "lib/net20/CsvHelper.dll",
+        "lib/net20/CsvHelper.pdb",
+        "lib/net20/CsvHelper.xml",
+        "lib/net35-client/CsvHelper.dll",
+        "lib/net35-client/CsvHelper.pdb",
+        "lib/net35-client/CsvHelper.xml",
+        "lib/net40-client/CsvHelper.dll",
+        "lib/net40-client/CsvHelper.pdb",
+        "lib/net40-client/CsvHelper.xml",
+        "lib/portable-net40+sl5+win8+wpa+wp8/CsvHelper.dll",
+        "lib/portable-net40+sl5+win8+wpa+wp8/CsvHelper.pdb",
+        "lib/portable-net40+sl5+win8+wpa+wp8/CsvHelper.xml"
       ]
     },
     "Iesi.Collections/4.0.0.4000": {
@@ -6034,16 +6055,6 @@
         "NHibernate.releasenotes.txt",
         "nhibernate-configuration.xsd",
         "nhibernate-mapping.xsd"
-      ]
-    },
-    "Ninject.Mono/3.0.1.13": {
-      "type": "package",
-      "sha512": "RN+UYWxRFR4vFixxko17ScercVt7NERm5j6zwNEp7w/F1QUMkY1YXI0dBabxg7YdZvHDFIhTnZLX+XYGjf0DKw==",
-      "files": [
-        "lib/net40/Ninject.dll",
-        "Ninject.Mono.3.0.1.13.nupkg",
-        "Ninject.Mono.3.0.1.13.nupkg.sha512",
-        "Ninject.Mono.nuspec"
       ]
     },
     "System.Collections/4.0.0": {
