@@ -43,8 +43,7 @@
         "dependencies": {
           "Autofac": "4.0.0-rc1-177",
           "CsvHelper": "2.13.5",
-          "NHibernate": "4.0.4.4000",
-          "Npgsql": "3.1.0-alpha6"
+          "NHibernate": "4.0.4.4000"
         },
         "frameworkAssemblies": [
           "System.Xml",
@@ -1424,21 +1423,6 @@
         },
         "runtime": {
           "lib/net40/NHibernate.dll": {}
-        }
-      },
-      "Npgsql/3.1.0-alpha6": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net45/Npgsql.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Npgsql.dll": {}
         }
       },
       "System.Collections/4.0.0": {
@@ -1694,8 +1678,7 @@
         "dependencies": {
           "Autofac": "4.0.0-rc1-177",
           "CsvHelper": "2.13.5",
-          "NHibernate": "4.0.4.4000",
-          "Npgsql": "3.1.0-alpha6"
+          "NHibernate": "4.0.4.4000"
         },
         "frameworkAssemblies": [
           "System.Xml",
@@ -3077,21 +3060,6 @@
           "lib/net40/NHibernate.dll": {}
         }
       },
-      "Npgsql/3.1.0-alpha6": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net45/Npgsql.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Npgsql.dll": {}
-        }
-      },
       "System.Collections/4.0.0": {
         "type": "package",
         "compile": {
@@ -3345,8 +3313,7 @@
         "dependencies": {
           "Autofac": "4.0.0-rc1-177",
           "CsvHelper": "2.13.5",
-          "NHibernate": "4.0.4.4000",
-          "Npgsql": "3.1.0-alpha6"
+          "NHibernate": "4.0.4.4000"
         },
         "frameworkAssemblies": [
           "System.Xml",
@@ -4731,21 +4698,6 @@
           "lib/net40/NHibernate.dll": {}
         }
       },
-      "Npgsql/3.1.0-alpha6": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net45/Npgsql.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Npgsql.dll": {}
-        }
-      },
       "System.Collections/4.0.0": {
         "type": "package",
         "compile": {
@@ -6118,26 +6070,6 @@
         "NHibernate.releasenotes.txt",
         "nhibernate-configuration.xsd",
         "nhibernate-mapping.xsd"
-      ]
-    },
-    "Npgsql/3.1.0-alpha6": {
-      "type": "package",
-      "sha512": "gYOozZ+PPgrw7zogHlBONFjZxNnagSWkDfVXZTamJy9zWRU/+O6pCHgEsEwsdENGaYC0RFvQUbDo5lIYA8kjpA==",
-      "files": [
-        "app/project.json",
-        "app/rewrite-async",
-        "app/rewrite-async.cmd",
-        "lib/dnx452/Npgsql.dll",
-        "lib/dnx452/Npgsql.xml",
-        "lib/dnxcore50/Npgsql.dll",
-        "lib/dnxcore50/Npgsql.xml",
-        "lib/net45/Npgsql.dll",
-        "lib/net45/Npgsql.xml",
-        "lib/net452/Npgsql.dll",
-        "lib/net452/Npgsql.xml",
-        "Npgsql.3.1.0-alpha6.nupkg",
-        "Npgsql.3.1.0-alpha6.nupkg.sha512",
-        "Npgsql.nuspec"
       ]
     },
     "System.Collections/4.0.0": {
