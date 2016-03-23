@@ -1,7 +1,7 @@
 using System;
-using NHibernate.Mapping.ByCode.Conformist;
-using NHibernate.Mapping.ByCode;
 using BackendDotNet.Common.NHibernate;
+using NHibernate.Mapping.ByCode;
+using NHibernate.Mapping.ByCode.Conformist;
 
 namespace BackendDotNet.Domain {
 	public class Stock : IEntityKey<long> {
@@ -31,6 +31,9 @@ namespace BackendDotNet.Domain {
 		public StockMap () {
 			Table ("stock");
 			Id<long> (x => x.Id, m => {
+				m.Generator(Generators.Sequence, g => g.Params(new {
+					sequence = "stock_id_seq1"
+				}));
 				m.Column ("id");
 			});
 			Property<string> (x => x.Industry, m => {

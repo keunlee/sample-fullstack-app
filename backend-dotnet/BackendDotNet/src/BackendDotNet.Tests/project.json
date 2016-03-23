@@ -1,20 +1,31 @@
 {
-	"version": "1.0.0-*",
-	"description": "BackendDotNet Tests",
-	"authors": [ "" ],
-	"tags": [ "" ],
-  	"projectUrl": "",
-  	"licenseUrl": "",
-	"dependencies": {
-        "xunit": "2.1.0",
-        "xunit.runner.dnx": "2.1.0-rc1-build204",
-		"BackendDotNet.Library": "1.0.0-*"
-    },
-    "commands": {
-        "test": "xunit.runner.dnx"
-    },
-	"frameworks": {
-		"dnx451": {}
-	}
+  "version": "1.0.0-*",
+  "description": "BackendDotNet Tests",
+  "authors": [
+    ""
+  ],
+  "tags": [
+    ""
+  ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "dependencies": {
+    "xunit": "2.1.0",
+    "xunit.runner.dnx": "2.1.0-rc1-build204",
+    "BackendDotNet.Library": "1.0.0-*",
+		"Autofac": "4.0.0-rc1-177",
+    "Npgsql": "3.1.0-alpha6"
+  },
+  "commands": {
+    "test": "xunit.runner.dnx"
+  },
+  "frameworks": {
+    "dnx451": {}
+  },
+  "scripts": {
+    "postbuild": [
+      "echo COPYING hibernate.cfg.xml resource file to output folder",
+      "cp hibernate.cfg.xml bin/Debug/dnx451"
+    ]
+  }
 }
-

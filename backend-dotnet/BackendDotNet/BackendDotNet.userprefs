@@ -1,13 +1,13 @@
-﻿<Properties StartupItem="src/BackendDotNet.CLI/BackendDotNet.CLI.xproj" RefactoringSettings.EnableRefactorings="True">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="BackendDotNet.CLI|Profile" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/BackendDotNet.CLI/Support/CLIOptions.cs">
+﻿<Properties StartupItem="src/BackendDotNet.Tests/BackendDotNet.Tests.xproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="test|dnx451" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/BackendDotNet.Library/Service/Impl/StockServiceImpl.cs">
     <Files>
-      <File FileName="src/BackendDotNet.CLI/Support/CLIOptions.cs" Line="6" Column="9" />
+      <File FileName="src/BackendDotNet.Library/Service/Impl/StockServiceImpl.cs" Line="8" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <RunToCursorBreakpoint file="/Users/keunsuklee/Clients/KP/sample-fullstack-app/backend-dotnet/BackendDotNet/src/BackendDotNet.CLI/Program.cs" line="14" column="18" />
+      <Breakpoint file="/Users/keunsuklee/Clients/KP/sample-fullstack-app/backend-dotnet/BackendDotNet/src/BackendDotNet.Library/Service/Impl/StockServiceImpl.cs" line="20" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

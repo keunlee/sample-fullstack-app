@@ -35,5 +35,11 @@
     "wwwroot",
     "node_modules",
     "bower_components"
-  ]
+  ],
+  "scripts": {
+    "postbuild": [
+      "echo COPYING hibernate.cfg.xml resource file to output folder",
+      "cp hibernate.cfg.xml bin/Debug/dnx451"
+    ]
+  }
 }

@@ -191,6 +191,21 @@
           "lib/net40/NHibernate.dll": {}
         }
       },
+      "Npgsql/3.1.0-alpha6": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Npgsql.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Npgsql.dll": {}
+        }
+      },
       "xunit/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -490,6 +505,21 @@
           "lib/net40/NHibernate.dll": {}
         }
       },
+      "Npgsql/3.1.0-alpha6": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Npgsql.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Npgsql.dll": {}
+        }
+      },
       "xunit/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -787,6 +817,21 @@
         },
         "runtime": {
           "lib/net40/NHibernate.dll": {}
+        }
+      },
+      "Npgsql/3.1.0-alpha6": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/Npgsql.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Npgsql.dll": {}
         }
       },
       "xunit/2.1.0": {
@@ -1105,6 +1150,26 @@
         "nhibernate-mapping.xsd"
       ]
     },
+    "Npgsql/3.1.0-alpha6": {
+      "type": "package",
+      "sha512": "gYOozZ+PPgrw7zogHlBONFjZxNnagSWkDfVXZTamJy9zWRU/+O6pCHgEsEwsdENGaYC0RFvQUbDo5lIYA8kjpA==",
+      "files": [
+        "app/project.json",
+        "app/rewrite-async",
+        "app/rewrite-async.cmd",
+        "lib/dnx452/Npgsql.dll",
+        "lib/dnx452/Npgsql.xml",
+        "lib/dnxcore50/Npgsql.dll",
+        "lib/dnxcore50/Npgsql.xml",
+        "lib/net45/Npgsql.dll",
+        "lib/net45/Npgsql.xml",
+        "lib/net452/Npgsql.dll",
+        "lib/net452/Npgsql.xml",
+        "Npgsql.3.1.0-alpha6.nupkg",
+        "Npgsql.3.1.0-alpha6.nupkg.sha512",
+        "Npgsql.nuspec"
+      ]
+    },
     "xunit/2.1.0": {
       "type": "package",
       "sha512": "u/7VQSOSXa7kSG4iK6Lcn7RqKZQ3hk7cnyMNVMpXHSP0RI5VQEtc44hvkG3LyWOVsx1dhUDD3rPAHAxyOUDQJw==",
@@ -1273,7 +1338,9 @@
     "": [
       "xunit >= 2.1.0",
       "xunit.runner.dnx >= 2.1.0-rc1-build204",
-      "BackendDotNet.Library >= 1.0.0-*"
+      "BackendDotNet.Library >= 1.0.0-*",
+      "Autofac >= 4.0.0-rc1-177",
+      "Npgsql >= 3.1.0-alpha6"
     ],
     "DNX,Version=v4.5.1": []
   }

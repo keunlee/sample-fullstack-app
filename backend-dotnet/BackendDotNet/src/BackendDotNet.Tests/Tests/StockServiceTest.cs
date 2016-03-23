@@ -1,20 +1,22 @@
 using System;
 using Xunit;
+using Autofac;
+using BackendDotNet.Service;
 
-namespace BackendDotNet {
-	public class StockServiceTest {
-		[Fact]
-		public void PassingTest() {
-			Assert.Equal (4, Add (2, 2));
+namespace BackendDotNet.Tests  {
+	public class StockServiceTest : IClassFixture<StockServiceTestFixture> {
+		private StockServiceTestFixture fixture;
+		private IStockService stockService;
+
+		public StockServiceTest( StockServiceTestFixture fixture ) {
+			this.fixture = fixture;
+			this.stockService = this.fixture.BootStrapper.getContainer ().Resolve<IStockService> ();
 		}
-
+			
 		[Fact]
-		public void FailingTest() {
-			Assert.Equal (5, Add (2, 2));
-		}
-
-		int Add(int x, int y) {
-			return x + y;
+		public void ImportFileTest() {
+			this.stockService.importStocksByCSVFile ( "../../resources/data/amex.csv" );
+			Assert.True (true);
 		}
 	}
 }
