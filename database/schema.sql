@@ -14,5 +14,3 @@ create table stock (
     symbol varchar(255),
     primary key (id)
 );
-
-create sequence stock_id_seq;

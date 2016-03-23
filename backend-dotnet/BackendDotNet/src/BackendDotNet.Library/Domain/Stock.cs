@@ -32,7 +32,7 @@ namespace BackendDotNet.Domain {
 			Table ("stock");
 			Id<long> (x => x.Id, m => {
 				m.Generator(Generators.Sequence, g => g.Params(new {
-					sequence = "stock_id_seq1"
+					sequence = "stock_id_seq"
 				}));
 				m.Column ("id");
 			});
