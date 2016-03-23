@@ -41,9 +41,14 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "Autofac": "4.0.0-rc1-177",
           "CsvHelper": "2.13.5",
           "NHibernate": "4.0.4.4000"
-        }
+        },
+        "frameworkAssemblies": [
+          "System.Xml",
+          "System.Xml.Linq"
+        ]
       },
       "CsvHelper/2.13.5": {
         "type": "package",
@@ -1671,9 +1676,14 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "Autofac": "4.0.0-rc1-177",
           "CsvHelper": "2.13.5",
           "NHibernate": "4.0.4.4000"
-        }
+        },
+        "frameworkAssemblies": [
+          "System.Xml",
+          "System.Xml.Linq"
+        ]
       },
       "CsvHelper/2.13.5": {
         "type": "package",
@@ -3301,9 +3311,14 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "Autofac": "4.0.0-rc1-177",
           "CsvHelper": "2.13.5",
           "NHibernate": "4.0.4.4000"
-        }
+        },
+        "frameworkAssemblies": [
+          "System.Xml",
+          "System.Xml.Linq"
+        ]
       },
       "CsvHelper/2.13.5": {
         "type": "package",
