@@ -27,6 +27,8 @@
           "NHibernate": "4.0.4.4000"
         },
         "frameworkAssemblies": [
+          "System.Data",
+          "System.Transactions",
           "System.Xml",
           "System.Xml.Linq"
         ]
@@ -341,6 +343,8 @@
           "NHibernate": "4.0.4.4000"
         },
         "frameworkAssemblies": [
+          "System.Data",
+          "System.Transactions",
           "System.Xml",
           "System.Xml.Linq"
         ]
@@ -655,6 +659,8 @@
           "NHibernate": "4.0.4.4000"
         },
         "frameworkAssemblies": [
+          "System.Data",
+          "System.Transactions",
           "System.Xml",
           "System.Xml.Linq"
         ]

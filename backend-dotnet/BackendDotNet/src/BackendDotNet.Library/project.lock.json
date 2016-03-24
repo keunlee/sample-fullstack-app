@@ -227,7 +227,9 @@
     ],
     "DNX,Version=v4.5.1": [
       "fx/System.Xml >= 4.0.0",
-      "fx/System.Xml.Linq >= 4.0.0"
+      "fx/System.Xml.Linq >= 4.0.0",
+      "fx/System.Data >= 4.0.0",
+      "fx/System.Transactions >= 4.0.0"
     ]
   }
 }

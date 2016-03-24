@@ -12,14 +12,16 @@
   "dependencies": {
     "NHibernate": "4.0.4.4000",
     "CsvHelper": "2.13.5",
-	"Autofac": "4.0.0-rc1-177"
+    "Autofac": "4.0.0-rc1-177"
   },
   "frameworks": {
     "dnx451": {
-			      "frameworkAssemblies": {
+      "frameworkAssemblies": {
         "System.Xml": "4.0.0.0",
-        "System.Xml.Linq": "4.0.0.0"
+        "System.Xml.Linq": "4.0.0.0",
+        "System.Data": "4.0.0.0",
+	    "System.Transactions": "4.0.0.0"
       }
-		}
+    }
   }
 }

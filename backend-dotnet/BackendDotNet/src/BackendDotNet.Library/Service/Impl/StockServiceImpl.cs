@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using BackendDotNet.Dto;
-using BackendDotNet.Service;
-using BackendDotNet.Repository;
+using System.Transactions;
 using BackendDotNet.Domain;
+using BackendDotNet.Dto;
+using BackendDotNet.Repository;
+using BackendDotNet.Service;
+using BackendDotNet.Common.NHibernate;
 using CsvHelper;
 
 namespace BackendDotNet.Service.Impl {
@@ -24,7 +26,9 @@ namespace BackendDotNet.Service.Impl {
 			var parser = new CsvParser (textReader);
 			var rowNumber = 0;
 
-			using (var tx = this.stockRepository.session.BeginTransaction ()) {
+			using (var uow = new Uow (this.stockRepository.session)) {
+				uow.CommitOnDispose = true;
+
 				while( true ) {
 					var stock = new Stock ();
 					var row = parser.Read();
@@ -45,18 +49,13 @@ namespace BackendDotNet.Service.Impl {
 							stock.Industry = row [6];
 							stock.Summary = row [7];
 
-							this.stockRepository.session.Save ( stock );
+							this.stockRepository.Add ( stock );
 							rowNumber++;
 						}
 					}
 				}
-				tx.Commit ();
 
 				stocks = this.stockRepository.All ().ToList ().Select (x => new StockDto (x)).ToList ();
-
-				if (tx.IsActive) {
-					tx.Rollback ();
-				}
 			}
 				
 			return stocks;
