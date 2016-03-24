@@ -2,7 +2,7 @@
 
 import {IApplicationContext} from "../../core/context/IApplicationContext";
 
-export class AbstractController {
+export abstract class AbstractController {
     protected kernel : IKernel;
     private applicationContext : IApplicationContext;
 
