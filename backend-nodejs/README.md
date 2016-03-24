@@ -39,7 +39,7 @@ The following should lint and transpile typescript sources to javascript (there 
 
 ### Database Setup
 
-1. locate the following folder `database` and execute the sql scripts `create.sql` and `schema.sql`, in that order, against your postgresql database.
+1. locate the following folder `database` and execute the sql scripts `create.sql` and `schema.sql`, in that order, against your postgresql database. (Skip this step if you've done this already)
 2. locate the file `package.json` and modify the `database` fields w/in it to match your database environment. it should look something like this:
 
 ```json
@@ -52,6 +52,8 @@ The following should lint and transpile typescript sources to javascript (there 
 ```
 
 ### Loading Sample Data
+
+(Skip this step if you've done this already)
 
 1. From the commandline, change the current working directory to the folder `backend-nodejs`. This is the root directory for the node js backend.
 3. Run: `node cli/main.js file resources/data/nyse.csv`

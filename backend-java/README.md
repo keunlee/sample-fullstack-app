@@ -10,10 +10,12 @@ You will need the following things properly installed on your computer.
 
 ### Database Setup
 
-1. locate the following folder `database` and execute the sql scripts `create.sql` and `schema.sql`, in that order, against your postgresql database.
+1. locate the following folder `database` and execute the sql scripts `create.sql` and `schema.sql`, in that order, against your postgresql database. (Skip this step if you've done this already)
 2. locate the following file `backend-java/src/main/resources/database.properties` and replace the property values to match that of your own environment.
 
 ### Loading Sample Data
+
+(Skip this step if you've done this already)
 
 1. From the commandline, change the current working directory to the folder `backend-java`. This is the root directory for the java backend and you should see a pom file located in this directory.
 2. Run: `mvn clean compile package`
