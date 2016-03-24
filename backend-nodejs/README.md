@@ -1,5 +1,16 @@
 ## Node JS Backend
 
+### Overview
+
+For this backend implementation, the following are used:
+
+* Hapi - REST API Server
+* Sequelize - ORM framework
+* Inversify - Dependency Injection
+* Grunt CLI - Task runner
+
+All source, with exception of the grunt config files, are written in Typescript.
+
 ### Pre-Prerequisites
 
 You will need the following things properly installed on your computer.

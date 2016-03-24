@@ -1,14 +1,16 @@
 ﻿<Properties StartupItem="src/BackendDotNet.Tests/BackendDotNet.Tests.xproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="test|dnx451" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/BackendDotNet.Library/Service/Impl/StockServiceImpl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/BackendDotNet.Library/Domain/Stock.cs">
     <Files>
-      <File FileName="src/BackendDotNet.Library/Service/Impl/StockServiceImpl.cs" Line="8" Column="1" />
+      <File FileName="src/BackendDotNet.Library/Service/Impl/StockServiceImpl.cs" Line="50" Column="8" />
+      <File FileName="src/BackendDotNet.Library/Domain/Stock.cs" Line="30" Column="38" />
+      <File FileName="src/BackendDotNet.Library/Repository/StockRepository.cs" Line="8" Column="38" />
+      <File FileName="src/BackendDotNet.Library/Common/NHibernate/Repository.cs" Line="7" Column="2" />
+      <File FileName="src/BackendDotNet.Library/project.json" Line="12" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/keunsuklee/Clients/KP/sample-fullstack-app/backend-dotnet/BackendDotNet/src/BackendDotNet.Library/Service/Impl/StockServiceImpl.cs" line="20" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
