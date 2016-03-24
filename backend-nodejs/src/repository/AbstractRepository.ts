@@ -1,8 +1,17 @@
 import sequelize = require('sequelize');
 
-export class AbstractRepository<TInstance, TAttributes> {
+export abstract class AbstractRepository<TInstance, TAttributes> {
     protected models = require('../domain/sequelize-models');
     protected model : sequelize.Model<TInstance, TAttributes>;
+
+    constructor() {
+        this.setModel();
+    }
+
+    /**
+     *
+     */
+    protected abstract setModel() : void;
 
     /**
      *
