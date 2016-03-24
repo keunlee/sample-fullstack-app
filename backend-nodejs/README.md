@@ -67,6 +67,6 @@ The following should lint and transpile typescript sources to javascript (there 
 
 ### Development Notes
 
-I am using sequelize as a Node JS based ORM. For more info on how to generate a typescript based domain model from a database, as well as usage, please see the following forked project:
+This project uses sequelize as a Node JS based ORM. For more info on how to generate a typescript based domain model and repository from a database, as well as usage, please see the following forked project:
 
 https://github.com/keunlee/sequelize-auto-ts
