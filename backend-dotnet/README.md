@@ -52,6 +52,9 @@ Run: `dnu build`
 
 2. Run: `dnx web`
 
+3. Verify that the server has started
+4. Verify that our stock look up service is working by navigating to the following: [http://localhost:8080/service/stocks?q=aa](http://localhost:8080/service/stocks?q=aa) (you should see results)
+
 To build this project alone:
 
 Run: `dnu restore`
