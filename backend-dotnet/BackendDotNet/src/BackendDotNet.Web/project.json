@@ -4,39 +4,43 @@
     "emitEntryPoint": true
   },
   "tooling": {
-    "defaultNamespace": "BackendDotNet.Web"
+    "defaultNamespace": "BackendDotNet"
   },
+
   "dependencies": {
-    "BackendDotNet.Library": "1.0.0-*",
     "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
     "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
     "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final",
-    "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0-rc1-final",
+    "Microsoft.Extensions.Configuration.FileProviderExtensions" : "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
-    "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1-final",
-    "NHibernate": "4.0.4.4000",
+    "Microsoft.Extensions.Logging.Debug" : "1.0.0-rc1-final",
+	"NHibernate": "4.0.4.4000",
     "Autofac": "4.0.0-rc1-177",
-    "Autofac.Extensions.DependencyInjection": "4.0.0-rc1-177"
+    "Autofac.Extensions.DependencyInjection": "4.0.0-rc1-177",
+	"BackendDotNet.Library": "1.0.0-*",
+	"Npgsql": "3.1.0-alpha6"
   },
+
   "commands": {
     "web": "Microsoft.AspNet.Server.Kestrel"
   },
+
   "frameworks": {
-    "dnx451": {}
+    "dnx451": { }
   },
-  "publishExclude": [
-    "**.user",
-    "**.userprefs",
-    "**.vspscc"
-  ],
+
   "exclude": [
     "wwwroot",
     "node_modules",
     "bower_components"
   ],
-  "scripts": {
+  "publishExclude": [
+    "**.user",
+    "**.vspscc"
+  ],
+	"scripts": {
     "postbuild": [
       "echo COPYING hibernate.cfg.xml resource file to output folder",
       "cp hibernate.cfg.xml bin/Debug/dnx451"

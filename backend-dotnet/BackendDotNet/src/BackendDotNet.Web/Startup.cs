@@ -1,38 +1,60 @@
-
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using BackendDotNet;
-using BackendDotNet.Core;
+using Microsoft.Extensions.OptionsModel;
+using Microsoft.Extensions.Logging;
+using BackendDotNet.Common.DepedencyInjection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 
-namespace BackendDotNet {
-	public class Startup {
-		public IServiceProvider ConfigureServices(IServiceCollection services) {
-			services.AddMvc ();
+namespace BackendDotNet
+{
+    public class Startup
+    {
+        public Startup(IHostingEnvironment env)
+        {
+            // Set up configuration sources.
+            var builder = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .AddEnvironmentVariables();
+            Configuration = builder.Build();
+        }
 
-			// Add Autofac
-			var containerBuilder = new ContainerBuilder();
-			containerBuilder.RegisterModule<DIModule>();
-			containerBuilder.Populate(services);
-			var container = containerBuilder.Build();
-			return container.Resolve<IServiceProvider>();
-		}
+        public IConfigurationRoot Configuration { get; set; }
 
-		public void Configure(IApplicationBuilder app) {
-			app.Run (async (context) => {
-				await context.Response.WriteAsync ("Hello World!");
-			});
-		}
+        // This method gets called by the runtime. Use this method to add services to the container.
+		public IServiceProvider ConfigureServices(IServiceCollection services)
+        {
+            // Add framework services.
+            services.AddMvc();
 
-		public static void Main(string[] args) {
-			WebApplication.Run<Startup> (args);
-		}
-	}
+			var bootStrapper = new AutofacBootStrapper ();
+			var builder = bootStrapper.GetBuilder ();
+			builder.Populate (services);
+
+			var container = bootStrapper.GetContainer ();
+			return container.Resolve<IServiceProvider> ();
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        {
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
+
+            app.UseIISPlatformHandler();
+
+            app.UseStaticFiles();
+
+            app.UseMvc();
+        }
+
+        // Entry point for the application.
+        public static void Main(string[] args) => Microsoft.AspNet.Hosting.WebApplication.Run<Startup>(args);
+    }
 }
-
-
