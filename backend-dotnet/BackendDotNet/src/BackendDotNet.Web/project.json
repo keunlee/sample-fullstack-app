@@ -22,7 +22,7 @@
     "Npgsql": "3.1.0-alpha6"
   },
   "commands": {
-    "web": "Microsoft.AspNet.Server.Kestrel"
+    "web": "Microsoft.AspNet.Server.Kestrel --server.urls=http://*:8081/"
   },
   "frameworks": {
     "dnx451": {}

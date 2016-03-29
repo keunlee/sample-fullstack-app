@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using BackendDotNet.Common.DepedencyInjection;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.OptionsModel;
 using Microsoft.Extensions.Logging;
-using BackendDotNet.Common.DepedencyInjection;
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
+using Microsoft.Extensions.OptionsModel;
 
 namespace BackendDotNet
 {
