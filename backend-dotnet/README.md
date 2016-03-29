@@ -40,10 +40,20 @@ Current version of DNX installed and used for this project: 1.0.0-rc1-update1
 3. Run: `dnx run -f ../../resources/data/nasdaq.csv`
 4. Run: `dnx run -f ../../resources/data/nyse.csv`
 
-if you want to build this project alone:
+To build this project alone:
+
+Run: `dnu restore`
 
 Run: `dnu build`
 
 ### Starting the Backend Server
 
-### Development Notes
+1. From the commandline, change the current working directory to the folder `BackendDotNet/src/BackendDotNet.Web`
+
+2. Run: `dnx web`
+
+To build this project alone:
+
+Run: `dnu restore`
+
+Run: `dnu build`
