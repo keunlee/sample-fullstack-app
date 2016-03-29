@@ -14,13 +14,13 @@ namespace BackendDotNet {
 
 		public static void Main(string[] args) {
 			var bootStrapper = new AutofacBootStrapper ();
-			var stockService = bootStrapper.getContainer ().Resolve<IStockService> ();
+			var stockService = bootStrapper.GetContainer ().Resolve<IStockService> ();
 			var result = Parser.Default.ParseArguments<CLIOptions> (args);
 
 			result.MapResult (o => {
 				var fullPath = Path.GetFullPath( o.InputFile );
 				if ( File.Exists( fullPath )) {
-					stockService.importStocksByCSVFile( fullPath );
+					stockService.ImportStocksByCSVFile( fullPath );
 				}
 				return 0;
 			}, errs => 1);

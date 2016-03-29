@@ -2,32 +2,31 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Transactions;
+using BackendDotNet.Common.NHibernate;
 using BackendDotNet.Domain;
 using BackendDotNet.Dto;
 using BackendDotNet.Repository;
 using BackendDotNet.Service;
-using BackendDotNet.Common.NHibernate;
 using CsvHelper;
 
 namespace BackendDotNet.Service.Impl {
 	public class StockServiceImpl : IStockService {
-		private StockRepository stockRepository;
+		private StockRepository stockRepository { get; set;}
 
 		public StockServiceImpl ( StockRepository stockRepository ) {
 			this.stockRepository = stockRepository;
 		}
 
-		#region IStockService implementation
-
-		public IList<StockDto> importStocksByCSVFile(string file) {
+		public IList<StockDto> ImportStocksByCSVFile(string file) {
 			var stocks = new List<StockDto> ();
 			var textReader = File.OpenText ( file );  
 			var parser = new CsvParser (textReader);
 			var rowNumber = 0;
 
-			using (var uow = new Uow (this.stockRepository.session)) {
-				uow.CommitOnDispose = true;
+			using( var uow = this.stockRepository.Uow ) {
+				uow.OpenSession();
 
 				while( true ) {
 					var stock = new Stock ();
@@ -56,12 +55,30 @@ namespace BackendDotNet.Service.Impl {
 				}
 
 				stocks = this.stockRepository.All ().ToList ().Select (x => new StockDto (x)).ToList ();
+				uow.Commit ();
 			}
-				
+
 			return stocks;
 		}
-			
-		#endregion
+
+		public List<StockDto> findStocksByWildCard(string phrase) {
+			var stocks = new List<StockDto> ();
+
+			using( var uow = this.stockRepository.Uow ) {
+				uow.OpenSession ();
+
+				if (!String.IsNullOrEmpty (phrase)) {
+					StringBuilder sb = new StringBuilder ();
+					sb.Append (phrase.ToUpper ()).Append ("%");
+					string searchPhrase = sb.ToString ();
+					stocks = this.stockRepository.FindByWildCard (searchPhrase).ToList().Select( x => new StockDto(x)).ToList();
+				}
+
+				uow.Commit ();
+			}
+							
+			return stocks;
+		}
 	}
 }
 

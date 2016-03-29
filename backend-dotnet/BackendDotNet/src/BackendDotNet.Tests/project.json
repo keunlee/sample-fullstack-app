@@ -13,7 +13,7 @@
     "xunit": "2.1.0",
     "xunit.runner.dnx": "2.1.0-rc1-build204",
     "BackendDotNet.Library": "1.0.0-*",
-		"Autofac": "4.0.0-rc1-177",
+    "Autofac": "4.0.0-rc1-177",
     "Npgsql": "3.1.0-alpha6"
   },
   "commands": {

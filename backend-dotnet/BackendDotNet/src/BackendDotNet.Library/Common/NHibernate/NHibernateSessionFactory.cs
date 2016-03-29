@@ -21,6 +21,20 @@ namespace BackendDotNet.Common.NHibernate {
 			schemaExport.Create (true, true);
 		}
 			
+		public ISessionFactory GetSessionFactory( Boolean createSchema ) {
+			Configuration cfg = ConfigureNHibernateFromConfigFile (); // OR ConfigureNHibernate ();
+			HbmMapping mapping = GetMappings ();
+			cfg.AddDeserializedMapping (mapping, "BackendDotNet.Library.Schema");
+			SchemaMetadataUpdater.QuoteTableAndColumns (cfg);
+			ISessionFactory sessionFactory = cfg.BuildSessionFactory ();
+
+			if (createSchema) {
+				CreateDatabaseSchema (cfg);
+			}
+
+			return sessionFactory;
+		} 
+
 		public ISessionFactory GetSessionFactory() {
 			Configuration cfg = ConfigureNHibernateFromConfigFile (); // OR ConfigureNHibernate ();
 			HbmMapping mapping = GetMappings ();

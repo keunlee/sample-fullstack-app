@@ -1,0 +1,13 @@
+{
+  "name": "BackendDotNet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "restore" : "dnu restore src/BackendDotNet.Library && dnu restore src/BackendDotNet.CLI && dnu restore src/BackendDotNet.Tests && dnu restore src/BackendDotNet.Web",
+    "compile" : "dnu build src/BackendDotNet.Library && dnu build src/BackendDotNet.CLI && dnu build src/BackendDotNet.Tests && dnu build src/BackendDotNet.Web",
+    "build" : "npm run restore && npm run compile"
+  },
+  "author": "",
+  "license": "ISC"
+}

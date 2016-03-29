@@ -16,12 +16,12 @@ namespace BackendDotNet.Common.DepedencyInjection {
 			RegisterDependencyModules ( Builder );
 			return Builder;
 		}
-
-		public ContainerBuilder getBuilder() {
+			
+		public ContainerBuilder GetBuilder() {
 			return Builder;
 		}
 
-		public IContainer getContainer() {
+		public IContainer GetContainer() {
 			if (Container == null) {
 				Container = Builder.Build ();
 			}

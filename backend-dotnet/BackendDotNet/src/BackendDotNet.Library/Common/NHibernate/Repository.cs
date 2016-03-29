@@ -5,47 +5,43 @@ using NHibernate.Linq;
 
 namespace BackendDotNet.Common.NHibernate {
 	public abstract class Repository<TKey, T> : IPersistRepository<T>,IReadOnlyRepository<TKey, T> where T : class, IEntityKey<TKey> {
+		public IUow Uow { get; set; }
 
-		public virtual ISession session { get; set; }
-
-		public Repository () {
+		protected Repository(IUow uow) {
+			this.Uow = uow;
 		}
-
-		public Repository (ISession session) {
-			this.session = session;
-		}
-
+			
 		public bool Add(T entity) {
-			this.session.Save (entity);
+			this.Uow.Session.Save (entity);
 			return true;
 		}
 
 		public bool Add(System.Collections.Generic.IEnumerable<T> items) {
 			foreach (T item in items) {
-				this.session.Save (item);
+				this.Uow.Session.Save (item);
 			}
 			return true;
 		}
 
 		public bool Update(T entity) {
-			this.session.Update (entity);
+			this.Uow.Session.Update (entity);
 			return true;
 		}
 
 		public bool Delete(T entity) {
-			this.session.Delete (entity);
+			this.Uow.Session.Delete (entity);
 			return true;
 		}
 
 		public bool Delete(System.Collections.Generic.IEnumerable<T> entities) {
 			foreach (T entity in entities) {
-				this.session.Delete (entity);
+				this.Uow.Session.Delete (entity);
 			}
 			return true;
 		}
 
 		public IQueryable<T> All() {
-			return this.session.Query<T> ();
+			return this.Uow.Session.Query<T> ();
 		}
 
 		public T FindBy(System.Linq.Expressions.Expression<Func<T, bool>> expression) {
@@ -57,7 +53,7 @@ namespace BackendDotNet.Common.NHibernate {
 		}
 
 		public T FindBy(TKey id) {
-			return this.session.Get<T> (id);
+			return this.Uow.Session.Get<T> (id);
 		}
 	}
 }
