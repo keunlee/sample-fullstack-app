@@ -4,3 +4,4 @@
 src/**/*.js.map
 src/**/*.js
 **/*.DS_Store
+*.iml
