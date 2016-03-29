@@ -21,7 +21,7 @@ Current version of DNX installed and used for this project: 1.0.0-rc1-update1
 
 ### Building Source
 
-1. From the commandline, change the current working directory to the folder `BackendDotNet/`
+1. From the commandline, change the current working directory to the folder `backend-dotnet/BackendDotNet/`
 2. Run: `npm run build` - this will run dnu restore and dnu build on all solution projects.
 
 ### Database Setup
