@@ -1,0 +1,27 @@
+{
+  "name": "frontend-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "react-mixin": "^3.0.4",
+    "react-router": "^2.0.1",
+    "redux-devtools": "^3.1.1",
+    "ts-loader": "^0.8.1",
+    "tslint": "^3.6.0",
+    "typescript": "^1.8.9",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-redux": "^4.4.1",
+    "redux": "^3.3.1"
+  }
+}
