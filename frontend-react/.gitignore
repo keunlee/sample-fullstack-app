@@ -1,1 +1,5 @@
 *.iml
+node_modules
+typings
+src/**/*.js
+src/**/*.map

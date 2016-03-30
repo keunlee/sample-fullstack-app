@@ -49,9 +49,7 @@ Run: `dnu build`
 ### Starting the Backend Server
 
 1. From the commandline, change the current working directory to the folder `BackendDotNet/src/BackendDotNet.Web`
-
 2. Run: `dnx web`
-
 3. Verify that the server has started
 4. Verify that our stock look up service is working by navigating to the following: [http://localhost:8080/service/stocks?q=aa](http://localhost:8080/service/stocks?q=aa) (you should see results)
 
