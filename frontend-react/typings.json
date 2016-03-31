@@ -4,6 +4,7 @@
   "dependencies": {},
   "ambientDependencies": {
     "history": "registry:dt/history#1.8.0+20160316155526",
+    "node": "registry:dt/node#4.0.0+20160330064709",
     "react": "registry:dt/react#0.14.0+20160319053454",
     "react-dom": "registry:dt/react-dom#0.14.0+20160316155526",
     "react-mixin": "registry:dt/react-mixin#2.0.2+20160316155526",

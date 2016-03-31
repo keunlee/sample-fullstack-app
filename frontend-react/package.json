@@ -9,9 +9,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^0.23.1",
+    "node-sass": "^3.4.2",
     "react-mixin": "^3.0.4",
     "react-router": "^2.0.1",
     "redux-devtools": "^3.1.1",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
     "ts-loader": "^0.8.1",
     "tslint": "^3.6.0",
     "typescript": "^1.8.9",

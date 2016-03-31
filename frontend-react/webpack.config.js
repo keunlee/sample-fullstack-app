@@ -11,6 +11,10 @@ module.exports = {
             test: /\.tsx?$/,
             loader: 'ts-loader',
             exclude: /node_modules/
+        }, {
+            test: /\.scss$/,
+            loaders: ['style', 'css', 'sass'],
+            exclude: /node_modules/
         }]
     },
     entry: {
