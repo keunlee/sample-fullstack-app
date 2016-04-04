@@ -8,10 +8,12 @@
     "react": "registry:dt/react#0.14.0+20160319053454",
     "react-dom": "registry:dt/react-dom#0.14.0+20160316155526",
     "react-mixin": "registry:dt/react-mixin#2.0.2+20160316155526",
-    "react-router": "registry:dt/react-router#2.0.0+20160316155526",
+    "react-redux": "registry:dt/react-redux#4.4.0+20160316155526",
+    "react-router": "registry:dt/react-router#2.0.0+20160330124659",
     "react-router/history": "registry:dt/react-router/history#2.0.0+20160316155526",
     "redux": "registry:dt/redux#3.3.1+20160326112656",
     "redux-actions": "registry:dt/redux-actions#0.8.0+20160317120654",
-    "redux-devtools": "registry:dt/redux-devtools#3.0.0+20151215130854"
+    "redux-devtools": "registry:dt/redux-devtools#3.0.0+20151215130854",
+    "redux-thunk": "registry:dt/redux-thunk#2.0.1+20160317120654"
   }
 }

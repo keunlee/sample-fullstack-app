@@ -1,13 +1,24 @@
 /// <reference path='../typings/main.d.ts'/>
 
-import React = require('react');
 import ReactDOM = require('react-dom');
-import Root from './containers/Root';
+import * as React from 'react';
+import {Provider} from 'react-redux';
+import {createStore, combineReducers, Store} from 'redux';
+import {hashHistory, Router, Route} from "react-router"
+
+import * as reducers from './reducers';
+import App from "./containers/App";
+
 let css = require("./styles/index.scss");
+let reducer = combineReducers(reducers);
+let store : Store = createStore(reducer, {});
+let renderNode = document.getElementById('root');
 
-// Render a simple React h1 component into the body.
-// ReactDOM.render(<h1>Hello Typescript!</h1>, document.getElementsByTagName('body')[0]);
-
-const renderNode = document.getElementById('root');
-
-ReactDOM.render(<Root/>, renderNode);
+ReactDOM.render(
+    <Provider store={store}>
+        <Router history={hashHistory}>
+            <Route path="/" component={App}/>
+        </Router>
+    </Provider>,
+    renderNode
+);
