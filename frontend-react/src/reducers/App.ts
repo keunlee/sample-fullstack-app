@@ -13,9 +13,8 @@ const initialState : any = {
 export default handleActions<any>({
     [APP_INIT] : (state : any, action : Action) : any => {
         console.log("GOT APP INIT ACTION");
-        return [{
-            appStarted : true
-        }, ...state];
+        state.appStarted = action.payload.appStarted;
+        return state;
     }
 }, initialState);
 

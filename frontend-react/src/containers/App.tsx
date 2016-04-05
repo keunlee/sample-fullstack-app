@@ -1,31 +1,25 @@
 /// <reference path="../../typings/main.d.ts" />
 
-import { Dispatch, bindActionCreators } from 'redux';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as React from 'react';
-import { createAction, handleAction, handleActions } from 'redux-actions';
-
 import * as appActionCreators from '../actions/AppActions';
+import {IDefaultDispatchProps} from "../properties/IDefaultDispatchProps";
+import Dashboard from "./Dashboard";
 
-interface IAppProps {
-    dispatch : Dispatch
-}
-
-class App extends React.Component<IAppProps, {}> {
+class App extends React.Component<IDefaultDispatchProps, {}> {
     private appActions : any;
 
     constructor(props) {
         super(props);
         const {dispatch} = this.props;
         this.appActions = bindActionCreators(appActionCreators, dispatch);
-        this.appActions.appInit();
+        this.appActions.appInit(true);
     }
 
     public render() {
         return (
-            <div>
-                <p>HELLO WORLD</p>
-            </div>
+            <Dashboard findStocksByWildCard={null}></Dashboard>
         );
     }
 }
