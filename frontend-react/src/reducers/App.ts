@@ -1,6 +1,6 @@
 /// <reference path="../../typings/main.d.ts" />
 
-import {handleActions, Action} from 'redux-actions';
+import {Action} from 'redux-actions';
 
 import {
     APP_INIT
@@ -10,11 +10,19 @@ const initialState : any = {
     appStarted : false
 };
 
-export default handleActions<any>({
-    [APP_INIT] : (state : any, action : Action) : any => {
-        console.log("GOT APP INIT ACTION");
-        state.appStarted = action.payload.appStarted;
-        return state;
+const appActions = (state : any = initialState, action : Action) => {
+    if (!action) {
+        return initialState;
     }
-}, initialState);
+
+    switch (action.type) {
+        case APP_INIT:
+            state.appStarted = action.payload.appStarted;
+            return state;
+        default:
+            return initialState;
+    }
+};
+
+export default appActions;
 

@@ -1,14 +1,15 @@
-
-import { createAction, Action } from 'redux-actions';
+import ThunkInterface = ReduxThunk.ThunkInterface;
 
 import {
     APP_INIT
 } from '../constants/App';
 
-const appInit = createAction<any>(
-    APP_INIT,
-    (appStarted: boolean) => ({ appStarted })
-);
+const appInit = (appStarted : boolean ) : ThunkInterface => {
+    return (dispatch) => {
+        dispatch({ type: APP_INIT, payload : { appStarted : appStarted } });
+        dispatch({ type: 'HELLO_WORLD', payload : {} });
+    };
+}
 
 export {
     appInit
