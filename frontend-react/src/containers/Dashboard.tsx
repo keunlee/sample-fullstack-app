@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import {IDefaultProps} from "../properties/IDefaultProps";
+import D3HILOChart from "../components/D3HILOChart";
 
 interface IDashboardProps extends IDefaultProps {
     findStocksByWildCard : Function
@@ -23,6 +24,7 @@ class Dashboard extends React.Component<IDashboardProps, IDashboardState> {
             <div>
                 <p>Dashboard</p>
                 <input type="text" onChange={this.handleChange.bind(this, 'input')}></input>
+                <D3HILOChart></D3HILOChart>
             </div>
         );
     }
