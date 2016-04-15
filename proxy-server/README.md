@@ -13,6 +13,10 @@ You will need the following things properly installed on your computer.
 
 To install the above, I highly recommend using a node version manager (i.e. https://github.com/creationix/nvm)
 
+### Install npm Packages
+
+* `npm install`
+
 ### Before Starting the Proxy Server
 
 1. Start your frontend server (there are various implementations in this code base along with instructions on how to start
@@ -43,3 +47,11 @@ The motivation for using this is that, in the off-shoot chance you aren't using 
 creating a proxy so that your frontend and backend are talking on the same domain, I've created one for you. Simple, but useful.
 
 Alternatively, you could modify your CORS settings too as well, which will not necessitate the need for a proxy.
+
+### Credit
+
+A modified copy of the proxy.js file taken from the Redbird Reverse Proxy Project is used here. This modified copy of the of the file can be found
+in `lib/proxy.js`
+
+Much thanks and credit to the original author for their open source contribution of Redbird Reverse Proxy -- https://github.com/OptimalBits/redbird
+
