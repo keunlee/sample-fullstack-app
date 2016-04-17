@@ -1,9 +1,9 @@
 /// <reference path="../../typings/main.d.ts" />
 
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
-import * as React from 'react';
-import * as appActionCreators from '../actions/AppActions';
+import {bindActionCreators} from "redux";
+import {connect} from "react-redux";
+import * as React from "react";
+import * as appActionCreators from "../actions/AppActions";
 import Dashboard from "./Dashboard";
 
 function mapStateToProps(state: any, nextProps : any) {

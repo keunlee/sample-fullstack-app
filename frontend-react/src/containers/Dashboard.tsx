@@ -1,6 +1,6 @@
 /// <reference path="../../typings/main.d.ts" />
 
-import * as React from 'react';
+import * as React from "react";
 import D3HILOChart from "../components/D3HILOChart";
 import TypeAheadOptionTemplate from "../components/TypeAheadOptionTemplate";
 import {Stock} from "../models/Stock";

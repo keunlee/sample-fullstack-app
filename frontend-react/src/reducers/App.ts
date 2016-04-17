@@ -1,10 +1,6 @@
 /// <reference path="../../typings/main.d.ts" />
 
-import {
-    APP_INIT,
-    FIND_STOCKS_BY_WILDCARD_SUCCESS,
-    FIND_STOCKS_BY_WILDCARD_INVOKED
-} from '../constants/App';
+import {APP_INIT, FIND_STOCKS_BY_WILDCARD_SUCCESS, FIND_STOCKS_BY_WILDCARD_INVOKED} from "../constants/App";
 
 const initialState : any = {
     appStarted : false,

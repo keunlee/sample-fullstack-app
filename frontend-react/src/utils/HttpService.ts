@@ -2,8 +2,8 @@
 
 import Q = require('q');
 import Request = require('request');
-import HttpException from './HttpException';
-import HttpResponse from './HttpResponse';
+import HttpException from "./HttpException";
+import HttpResponse from "./HttpResponse";
 
 export class HttpService {
     public static request(options, method) : Q.Promise<HttpResponse> {

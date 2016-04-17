@@ -1,8 +1,8 @@
-import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
-import thunk from 'redux-thunk';
+import {createStore, combineReducers, applyMiddleware, compose} from "redux";
+import thunk from "redux-thunk";
+import * as reducers from "../reducers/index";
+import DevTools from "../core/devtools";
 import ThunkInterface = ReduxThunk.ThunkInterface;
-import * as reducers from '../reducers/index';
-import DevTools from '../core/devtools';
 
 let reducer = combineReducers(reducers);
 

@@ -1,11 +1,11 @@
 /// <reference path='../typings/main.d.ts'/>
 
 import ReactDOM = require('react-dom');
-import * as React from 'react';
-import {Provider} from 'react-redux';
-import {hashHistory, Router, Route} from "react-router"
-import DevTools from './core/devtools';
-import Store from './core/store';
+import * as React from "react";
+import {Provider} from "react-redux";
+import {hashHistory, Router, Route} from "react-router";
+import DevTools from "./core/devtools";
+import Store from "./core/store";
 import App from "./containers/App";
 
 let css = require("./styles/index.scss");
