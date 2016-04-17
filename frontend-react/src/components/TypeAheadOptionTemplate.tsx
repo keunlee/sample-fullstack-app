@@ -1,14 +1,6 @@
 import * as React from 'react';
-import {IDefaultProps} from "../properties/IDefaultProps";
 
-interface ITypeAheadOptionTemplateProps extends IDefaultProps {
-    isSelected : boolean,
-    data : any
-}
-
-interface ITypeAheadOptionTemplateState {}
-
-class TypeAheadOptionTemplate extends React.Component<ITypeAheadOptionTemplateProps, ITypeAheadOptionTemplateState> {
+export default class TypeAheadOptionTemplate extends React.Component<any, any> {
     constructor(props, context) {
         super(props, context);
     }
@@ -29,4 +21,3 @@ class TypeAheadOptionTemplate extends React.Component<ITypeAheadOptionTemplatePr
         );
     }
 }
-export default TypeAheadOptionTemplate;

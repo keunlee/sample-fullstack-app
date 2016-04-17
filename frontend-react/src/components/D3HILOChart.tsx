@@ -1,10 +1,6 @@
 import * as React from 'react';
-import {IDefaultProps} from "../properties/IDefaultProps";
 
-interface ID3HILOChartProps extends IDefaultProps {}
-interface ID3HILOChartState {}
-
-class D3HILOChart extends React.Component<ID3HILOChartProps, ID3HILOChartState> {
+export default class D3HILOChart extends React.Component<any, any> {
     constructor(props, context) {
         super(props, context);
     }
@@ -19,4 +15,3 @@ class D3HILOChart extends React.Component<ID3HILOChartProps, ID3HILOChartState> 
         );
     }
 }
-export default D3HILOChart;
