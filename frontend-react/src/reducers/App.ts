@@ -14,11 +14,11 @@ const appActions = (state : any = initialState, action : any) => {
 
     switch (action.type) {
         case APP_INIT:
-            return Object.assign({}, state, {appStarted: action.appStarted });
+            return Object.assign({}, state, {appStarted : action.appStarted});
         case FIND_STOCKS_BY_WILDCARD_INVOKED:
             return state;
         case FIND_STOCKS_BY_WILDCARD_SUCCESS:
-            return Object.assign({}, state, {options: action.options });
+            return Object.assign({}, state, {options : action.options});
         default:
             return initialState;
     }

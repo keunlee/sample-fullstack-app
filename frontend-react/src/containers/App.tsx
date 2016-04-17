@@ -6,17 +6,17 @@ import * as React from "react";
 import * as appActionCreators from "../actions/AppActions";
 import Dashboard from "./Dashboard";
 
-function mapStateToProps(state: any, nextProps : any) {
+function mapStateToProps(state : any, nextProps : any) {
     console.log("MAP STATE TO PROPS -- APP");
     return {
-        appStarted: state.App.appStarted,
-        options: state.App.options
+        appStarted : state.App.appStarted,
+        options : state.App.options
     };
 }
 
 function mapDispatchToProps(dispatch) {
     console.log("MAP DISPATCH TO PROPS -- APP");
-    return { actions: bindActionCreators(appActionCreators, dispatch) }
+    return {actions : bindActionCreators(appActionCreators, dispatch)}
 }
 
 class App extends React.Component<any, any> {
@@ -41,7 +41,7 @@ class App extends React.Component<any, any> {
         console.log("ON RECIEVE PROPS");
         this.setState({
             appStarted : newProps.appStarted,
-            options: newProps.options
+            options : newProps.options
         });
     }
 

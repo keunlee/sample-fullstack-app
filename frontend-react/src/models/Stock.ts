@@ -3,7 +3,7 @@ export class Stock {
     public name : string;
     public symbol : string;
 
-    public static deserialize( value : any ) : Stock {
+    public static deserialize(value : any) : Stock {
         let stock : Stock = new Stock();
         stock.id = value.id;
         stock.name = value.name;
