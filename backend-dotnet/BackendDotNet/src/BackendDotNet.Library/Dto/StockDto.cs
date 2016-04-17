@@ -3,16 +3,16 @@ using BackendDotNet.Domain;
 
 namespace BackendDotNet.Dto {
 	public class StockDto {
-		public virtual long Id { get; set; }
-		public virtual string Name { get; set; }
-		public virtual string Symbol { get; set; }
+		public virtual long id { get; set; }
+		public virtual string name { get; set; }
+		public virtual string symbol { get; set; }
 
 		public StockDto() {}
 
 		public StockDto(Stock entity ) {
-			this.Id = entity.Id;
-			this.Name = entity.Name;
-			this.Symbol = entity.Symbol;
+			this.id = entity.Id;
+			this.name = entity.Name;
+			this.symbol = entity.Symbol;
 		}
 	}
 }

@@ -11,6 +11,7 @@ module.exports = {
         extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
     },
     module: {
+        noParse: /node_modules\/json-schema\/lib\/validate\.js/,
         loaders: [{
             test: /\.tsx?$/,
             loader: 'ts-loader',
@@ -19,10 +20,18 @@ module.exports = {
             test: /\.scss$/,
             loaders: ['style', 'css', 'sass'],
             exclude: /node_modules/
+        },  {
+            test: /\.json$/,
+            loader: 'json-loader'
         }]
     },
     entry: {
         // Set index.tsx as application entry point.
         app: './src/index.tsx'
+    },
+    node: {
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty'
     }
 };

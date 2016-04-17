@@ -4,8 +4,11 @@
   "dependencies": {},
   "ambientDependencies": {
     "d3": "registry:dt/d3#0.0.0+20160317120654",
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
+    "form-data": "registry:dt/form-data#0.0.0+20160316155526",
     "history": "registry:dt/history#1.8.0+20160316155526",
     "node": "registry:dt/node#4.0.0+20160330064709",
+    "q": "registry:dt/q#0.0.0+20160323171452",
     "react": "registry:dt/react#0.14.0+20160319053454",
     "react-dom": "registry:dt/react-dom#0.14.0+20160316155526",
     "react-mixin": "registry:dt/react-mixin#2.0.2+20160316155526",
@@ -17,6 +20,7 @@
     "redux-devtools": "registry:dt/redux-devtools#3.0.0+20151215130854",
     "redux-devtools-dock-monitor": "registry:dt/redux-devtools-dock-monitor#1.0.1+20151216103641",
     "redux-devtools-log-monitor": "registry:dt/redux-devtools-log-monitor#1.0.1+20151216103641",
-    "redux-thunk": "registry:dt/redux-thunk#2.0.1+20160317120654"
+    "redux-thunk": "registry:dt/redux-thunk#2.0.1+20160317120654",
+    "request": "registry:dt/request#0.0.0+20160316155526"
   }
 }

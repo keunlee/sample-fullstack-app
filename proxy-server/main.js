@@ -1,5 +1,5 @@
 // our proxy
-var proxy = require('./lib/proxy')({port: 9000, xfwd: true });
+var proxy = require('./lib/proxy')({port: 9001, xfwd: true });
 
 // register the frontend server for proxying
 proxy.register("localhost", "http://localhost:8081");

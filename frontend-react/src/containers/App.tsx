@@ -1,30 +1,54 @@
 /// <reference path="../../typings/main.d.ts" />
 
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 import * as React from 'react';
 import * as appActionCreators from '../actions/AppActions';
-import {IDefaultDispatchProps} from "../properties/IDefaultDispatchProps";
 import Dashboard from "./Dashboard";
 
-class App extends React.Component<IDefaultDispatchProps, {}> {
-    private appActions : any;
+function mapStateToProps(state: any, nextProps : any) {
+    console.log("MAP STATE TO PROPS -- APP");
+    return {
+        appStarted: state.App.appStarted,
+        options: state.App.options
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    console.log("MAP DISPATCH TO PROPS -- APP");
+    return { actions: bindActionCreators(appActionCreators, dispatch) }
+}
+
+class App extends React.Component<any, any> {
 
     constructor(props) {
         super(props);
-        const {dispatch} = this.props;
-        this.appActions = bindActionCreators(appActionCreators, dispatch);
-        this.appActions.appInit(true);
+        this.props.actions.appInit(true);
     }
 
     public render() {
+        console.log("APP RENDER");
+
         return (
-            <Dashboard findStocksByWildCard={null}></Dashboard>
+            <Dashboard
+                findStocksByWildCard={this.findStocksByWildCard}
+                options={( this.state && this.state.options )  ? this.state.options : []}>
+            </Dashboard>
         );
+    }
+
+    public componentWillReceiveProps(nextProps : any) {
+        console.log("ON RECIEVE PROPS");
+        this.setState({
+            appStarted : nextProps.appStarted,
+            options: nextProps.options
+        });
+    }
+
+    private findStocksByWildCard : (value : string) => void = (value : string) => {
+        this.props.actions.findStocksByWildCard(value);
     }
 }
 
-const mapStateToProps = state => ({
-});
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

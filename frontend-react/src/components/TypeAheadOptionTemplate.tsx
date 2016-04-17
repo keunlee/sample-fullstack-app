@@ -24,7 +24,7 @@ class TypeAheadOptionTemplate extends React.Component<ITypeAheadOptionTemplatePr
         }
         return (
             <div style={bgColor}>
-                <p>{this.props.data.name}</p>
+                <span>{this.props.data.name}</span>
             </div>
         );
     }
