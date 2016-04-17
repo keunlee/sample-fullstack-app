@@ -37,11 +37,11 @@ class App extends React.Component<any, any> {
         );
     }
 
-    public componentWillReceiveProps(nextProps : any) {
+    public componentWillReceiveProps(newProps : any, oldProps : any) {
         console.log("ON RECIEVE PROPS");
         this.setState({
-            appStarted : nextProps.appStarted,
-            options: nextProps.options
+            appStarted : newProps.appStarted,
+            options: newProps.options
         });
     }
 

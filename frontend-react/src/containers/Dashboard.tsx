@@ -35,18 +35,18 @@ export default class Dashboard extends React.Component<any, any> {
         );
     }
 
-    public componentWillReceiveProps(nextProps : any) {
+    public componentWillReceiveProps(newProps : any, oldProps : any) {
         console.log("ON RECIEVE PROPS");
         this.setState({
-            options : nextProps.options
+            options : newProps.options
         });
     }
 
-    private handleOptionChange: (event : any, option : Stock ) => void = (event : any, option : any) => {
+    private handleOptionChange : (event : any, option : Stock) => void = (event : any, option : any) => {
         this.setInputValue(option.name);
     }
 
-    private handleOptionClick: (event : any, option : Stock ) => void = (event : any, option : any) => {
+    private handleOptionClick : (event : any, option : Stock) => void = (event : any, option : any) => {
         this.setInputValue(option.name);
     }
 
