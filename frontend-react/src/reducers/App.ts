@@ -1,6 +1,6 @@
 /// <reference path="../../typings/main.d.ts" />
 
-import {APP_INIT, FIND_STOCKS_BY_WILDCARD_SUCCESS, FIND_STOCKS_BY_WILDCARD_INVOKED} from "../constants/App";
+import {APP_INIT, FIND_STOCKS_BY_WILDCARD_SUCCESS} from "../constants/App";
 
 const initialState : any = {
     appStarted : false,
@@ -15,8 +15,6 @@ const appActions = (state : any = initialState, action : any) => {
     switch (action.type) {
         case APP_INIT:
             return Object.assign({}, state, {appStarted : action.appStarted});
-        case FIND_STOCKS_BY_WILDCARD_INVOKED:
-            return state;
         case FIND_STOCKS_BY_WILDCARD_SUCCESS:
             return Object.assign({}, state, {options : action.options});
         default:

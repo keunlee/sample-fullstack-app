@@ -16,13 +16,13 @@ export default class Dashboard extends React.Component<any, any> {
     }
 
     public render() {
-        console.log("DASHBOARD RENDER");
         const {options} = this.props;
 
         return (
-            <div>
-                <h1>Dashboard</h1>
+            <div className="dashboard">
+                <h1>Stock Finder</h1>
                 <Typeahead
+                    placeholder="Type to search for a stock"
                     inputValue={ this.state.inputValue }
                     options={ options }
                     onChange={ this.handleChange }
@@ -36,7 +36,6 @@ export default class Dashboard extends React.Component<any, any> {
     }
 
     public componentWillReceiveProps(newProps : any, oldProps : any) {
-        console.log("ON RECIEVE PROPS");
         this.setState({
             options : newProps.options
         });

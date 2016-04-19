@@ -6,19 +6,6 @@ import * as React from "react";
 import * as appActionCreators from "../actions/AppActions";
 import Dashboard from "./Dashboard";
 
-function mapStateToProps(state : any, nextProps : any) {
-    console.log("MAP STATE TO PROPS -- APP");
-    return {
-        appStarted : state.App.appStarted,
-        options : state.App.options
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    console.log("MAP DISPATCH TO PROPS -- APP");
-    return {actions : bindActionCreators(appActionCreators, dispatch)}
-}
-
 class App extends React.Component<any, any> {
 
     constructor(props) {
@@ -27,8 +14,6 @@ class App extends React.Component<any, any> {
     }
 
     public render() {
-        console.log("APP RENDER");
-
         return (
             <Dashboard
                 findStocksByWildCard={this.findStocksByWildCard}
@@ -38,7 +23,6 @@ class App extends React.Component<any, any> {
     }
 
     public componentWillReceiveProps(newProps : any, oldProps : any) {
-        console.log("ON RECIEVE PROPS");
         this.setState({
             appStarted : newProps.appStarted,
             options : newProps.options
@@ -50,5 +34,15 @@ class App extends React.Component<any, any> {
     }
 }
 
+function mapStateToProps(state : any, nextProps : any) {
+    return {
+        appStarted : state.App.appStarted,
+        options : state.App.options
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {actions : bindActionCreators(appActionCreators, dispatch)}
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
