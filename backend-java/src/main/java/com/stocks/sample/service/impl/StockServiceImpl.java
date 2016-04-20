@@ -74,7 +74,7 @@ public class StockServiceImpl implements StockService {
     public List<StockDto> findStocksByWildCard(String phrase) {
         List<StockDto> results = new ArrayList<StockDto>();
 
-        if (!StringUtils.isEmpty(phrase) && phrase.length() > 1) {
+        if (!StringUtils.isEmpty(phrase) && phrase.length() > 0) {
             StringBuilder sb = new StringBuilder();
             sb.append(phrase.toUpperCase()).append("%");
             String searchPhrase = sb.toString();
