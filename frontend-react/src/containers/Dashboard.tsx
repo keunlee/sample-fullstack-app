@@ -1,7 +1,7 @@
 /// <reference path="../../typings/main.d.ts" />
 
 import * as React from "react";
-import D3HILOChart from "../components/D3HILOChart";
+import CandleStickContainer from "../components/charts/candlestick/CandleStickContainer";
 import TypeAheadOptionTemplate from "../components/TypeAheadOptionTemplate";
 import {Stock} from "../models/Stock";
 let Typeahead = require('react-typeahead-component');
@@ -30,7 +30,7 @@ export default class Dashboard extends React.Component<any, any> {
                     onOptionChange={this.handleOptionChange}
                     onOptionClick={this.handleOptionClick}>
                 </Typeahead>
-                <D3HILOChart></D3HILOChart>
+                <CandleStickContainer></CandleStickContainer>
             </div>
         );
     }
