@@ -45,13 +45,22 @@ export class StockServiceImpl implements StockService {
 
                     Q.allSettled(createPromises)
                         .then( (results : Q.PromiseState<any>[]) => {
-                            console.log("ALL RECORDS IMPORTED");
+                            let allRecordsImported = true;
                             results.forEach( each => {
                                 if ( each.state === "fulfilled") {
                                     stockDtos.push( new StockDto(each.value) );
+                                } else {
+                                   allRecordsImported = false;
                                 }
                             });
-                            deferred.resolve(stockDtos);
+
+                            if ( allRecordsImported ) {
+                                console.log("ALL RECORDS IMPORTED");
+                                deferred.resolve(stockDtos);
+                            } else {
+                                let error : Error = new Error("RECORD IMPORT FAILED");
+                                deferred.reject(error);
+                            }
                         })
                         .catch(error => {
                             deferred.reject(error);

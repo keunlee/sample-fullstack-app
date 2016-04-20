@@ -56,9 +56,9 @@ The following should lint and transpile typescript sources to javascript (there 
 (Skip this step if you've done this already)
 
 1. From the commandline, change the current working directory to the folder `backend-nodejs`. This is the root directory for the node js backend.
-3. Run: `node cli/main.js file resources/data/nyse.csv`
-4. Run: `node cli/main.js file resources/data/nasdaq.csv`
-5. Run: `node cli/main.js file resources/data/amex.csv`
+3. Run: `node src/cli/main.js file resources/data/nyse.csv`
+4. Run: `node src/cli/main.js file resources/data/nasdaq.csv`
+5. Run: `node src/cli/main.js file resources/data/amex.csv`
 
 ### Starting the Backend Server
 
