@@ -17,6 +17,7 @@ class App extends React.Component<any, any> {
         return (
             <Dashboard
                 findStocksByWildCard={this.findStocksByWildCard}
+                getHistoricalStockData={this.getHistoricalStockData}
                 options={( this.state && this.state.options )  ? this.state.options : []}>
             </Dashboard>
         );
@@ -31,6 +32,10 @@ class App extends React.Component<any, any> {
 
     private findStocksByWildCard : (value : string) => void = (value : string) => {
         this.props.actions.findStocksByWildCard(value);
+    }
+
+    private getHistoricalStockData : (symbol : string ) => void = ( symbol : string ) => {
+        this.props.actions.getHistoricalStockData( symbol );
     }
 }
 

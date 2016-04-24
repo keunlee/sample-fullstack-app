@@ -4,7 +4,7 @@
   "description": "**NOTES**",
   "main": "index.js",
   "scripts": {
-    "start" : "grunt"
+    "start": "grunt"
   },
   "author": "",
   "license": "ISC",
@@ -24,9 +24,11 @@
     "inversify": "1.0.3",
     "joi": "^8.0.4",
     "lodash": "^4.6.1",
+    "moment": "^2.13.0",
     "pg": "^4.5.1",
     "pg-hstore": "^2.3.2",
     "q": "^1.4.1",
+    "request": "^2.72.0",
     "sequelize": "^3.19.3",
     "validator": "^5.1.0"
   },

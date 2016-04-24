@@ -47,6 +47,7 @@ export default class Dashboard extends React.Component<any, any> {
 
     private handleOptionClick : (event : any, option : Stock) => void = (event : any, option : any) => {
         this.setInputValue(option.name);
+        this.props.getHistoricalStockData( option.symbol );
     }
 
     private handleChange : (event : any) => void = (event : any) => {

@@ -4,10 +4,13 @@ import models = require('../../domain/sequelize-models');
 import Q = require('q');
 import {StockRepository} from "../../repository/StockRepository";
 import {StockDto} from "../../dto/StockDto";
+import {HttpService} from "../../utils/HttpService";
+import HttpResponse from "../../utils/HttpResponse";
 
 let fs = require('fs');
 let parse = require('csv-parse');
 let path = require('path');
+let moment = require('moment');
 
 export class StockServiceImpl implements StockService {
     private stockRepository : StockRepository = new StockRepository();
@@ -95,6 +98,40 @@ export class StockServiceImpl implements StockService {
             .catch( (error : Error) => {
                 deferred.reject( error );
             })
+
+        return deferred.promise;
+    }
+
+    /**
+     *
+     * @param symbol
+     * @returns {Promise<any>}
+     */
+    public getHistoricalStockData( symbol : string ) : Q.Promise<any> {
+        let deferred = Q.defer<any>();
+        let startDate = moment().subtract(30, 'days').format('YYYY-MM-DD');
+        let endDate = moment().format('YYYY-MM-DD');
+
+        let yqlURL = "http://query.yahooapis.com/v1/public/yql?q=";
+        let dataFormat = "&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+        let historicalQ = yqlURL + "select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22" + symbol + "%22%20and%20startDate%20%3D%20%22" + startDate + "%22%20and%20endDate%20%3D%20%22" + endDate + "%22" + dataFormat;
+
+        let options = {
+            uri : historicalQ
+        };
+
+        HttpService.request(options, 'get')
+            .then((response : HttpResponse) => {
+                if (response.httpCode === 200) {
+                    let parsedResponse : any = JSON.parse(response.body);
+                    deferred.resolve(parsedResponse);
+                } else {
+                    deferred.reject(new Error("could not retrieve stock data"));
+                }
+            })
+            .catch((err : any) => {
+                deferred.reject(err);
+            });
 
         return deferred.promise;
     }

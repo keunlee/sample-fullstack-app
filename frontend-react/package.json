@@ -29,6 +29,7 @@
   "dependencies": {
     "d3": "^3.5.16",
     "form-data": "^0.2.0",
+    "moment": "^2.13.0",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
     "react-mixin": "^3.0.4",

@@ -32,6 +32,18 @@ export class StockRoutes implements IRouter {
                     }
                 }
             }
+        }, {
+            method : 'GET',
+            path : '/service/stockhistory/{symbol}',
+            config : {
+                handler : this.stockController.getHistoricalStockData,
+                bind: this.stockController,
+                validate : {
+                    params : {
+                        symbol : Joi.string()
+                    }
+                }
+            }
         }];
         return routes;
     }

@@ -30,4 +30,22 @@ export class StockController extends AbstractController {
                 reply( error );
             });
     }
+
+    /**
+     *
+     * @param request
+     * @param reply
+     */
+    public getHistoricalStockData( request : any, reply : any ) : void {
+        let self : StockController = this;
+        let symbol : string = request.params.symbol;
+
+        self.stockService.getHistoricalStockData( symbol )
+            .then( (result : any) => {
+                reply( result );
+            })
+            .catch( (error : Error) => {
+                reply( error );
+            });
+    }
 }
