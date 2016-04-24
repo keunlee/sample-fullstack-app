@@ -6,6 +6,3 @@ proxy.register("localhost", "http://localhost:8081");
 
 // register the backend server for proxying
 proxy.register("localhost/service", "http://localhost:8080/service");
-
-// register yahoo finance api via proxy
-proxy.register("localhost/yahooapis", "http://query.yahooapis.com/v1/public");
