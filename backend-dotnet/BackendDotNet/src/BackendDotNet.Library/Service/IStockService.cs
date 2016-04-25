@@ -7,6 +7,7 @@ namespace BackendDotNet.Service {
 	public interface IStockService {
 		IList<StockDto> ImportStocksByCSVFile(string file);
 		List<StockDto> findStocksByWildCard(string phrase);
+		Object getHistoricalStockData(string symbol); 
 	}
 }
 

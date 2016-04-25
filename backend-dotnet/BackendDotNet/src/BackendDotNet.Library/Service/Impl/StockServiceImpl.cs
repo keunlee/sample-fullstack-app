@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Transactions;
 using BackendDotNet.Common.NHibernate;
@@ -17,6 +19,31 @@ namespace BackendDotNet.Service.Impl {
 
 		public StockServiceImpl ( StockRepository stockRepository ) {
 			this.stockRepository = stockRepository;
+		}
+
+		public Object getHistoricalStockData(string symbol) {
+			DateTime startDate = DateTime.Now.AddDays (-30);
+			DateTime endDate = DateTime.Now;
+			string strStartDate = startDate.ToString ("yyyy-MM-dd");
+			string strEndDate = endDate.ToString ("yyyy-MM-dd");
+
+			string yqlURL = "http://query.yahooapis.com/v1/public/yql";
+			string dataFormat = "&format=json&env=store://datatables.org/alltableswithkeys";
+			string parameters = "?q=select * from yahoo.finance.historicaldata where symbol =\"" + symbol + "\"and startDate=\"" + strStartDate + "\" and endDate=\"" + strEndDate + "\"" + dataFormat;
+
+			HttpClient client = new HttpClient ();
+			client.BaseAddress = new Uri ( yqlURL );
+			client.DefaultRequestHeaders.Accept.Add(
+				new MediaTypeWithQualityHeaderValue("application/json"));
+			
+			HttpResponseMessage response = client.GetAsync ( parameters ).Result;
+
+			if (response.IsSuccessStatusCode) {
+				var responseData = response.Content.ReadAsAsync<Object> ().Result;
+				return responseData;
+			} else {
+				return null;
+			}
 		}
 
 		public IList<StockDto> ImportStocksByCSVFile(string file) {

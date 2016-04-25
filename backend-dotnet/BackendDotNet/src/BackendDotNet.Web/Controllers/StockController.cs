@@ -6,7 +6,7 @@ using Microsoft.AspNet.Mvc;
 using BackendDotNet.Service;
 
 namespace BackendDotNet.Controllers {
-	[Route("service/stocks")]
+	
 	public class StockController : Controller {
 		private IStockService stockService;
 
@@ -14,9 +14,16 @@ namespace BackendDotNet.Controllers {
 			this.stockService = stockService;
 		}
 
-		public dynamic Get( [FromQuery] string q ) {
+		[Route("service/stocks"), HttpGet]
+		public dynamic findStocksByWildCard( [FromQuery] string q ) {
 			var stocks = this.stockService.findStocksByWildCard (q);
 			return stocks;
+		}
+
+		[Route("service/stockhistory/{symbol}"), HttpGet]
+		public dynamic getHistoricalStockData( [FromRoute] string symbol ) {
+			var stockData = this.stockService.getHistoricalStockData (symbol);
+			return stockData;
 		}
 	}
 }

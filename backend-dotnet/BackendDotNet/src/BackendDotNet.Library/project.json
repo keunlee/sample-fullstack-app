@@ -12,7 +12,9 @@
   "dependencies": {
     "NHibernate": "4.0.4.4000",
     "CsvHelper": "2.13.5",
-    "Autofac": "4.0.0-rc1-177"
+    "Autofac": "4.0.0-rc1-177",
+    "Newtonsoft.Json": "8.0.3",
+    "Microsoft.AspNet.WebApi.Client": "5.2.3"
   },
   "frameworks": {
     "dnx451": {
@@ -20,7 +22,8 @@
         "System.Xml": "4.0.0.0",
         "System.Xml.Linq": "4.0.0.0",
         "System.Data": "4.0.0.0",
-	    "System.Transactions": "4.0.0.0"
+        "System.Transactions": "4.0.0.0",
+        "System.Net.Http": "4.0.0.0"
       }
     }
   }
