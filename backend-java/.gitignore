@@ -2,3 +2,4 @@ target
 backend.iml
 *.log
 *.iml
+/out/

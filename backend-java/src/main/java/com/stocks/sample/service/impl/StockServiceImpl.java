@@ -1,5 +1,6 @@
 package com.stocks.sample.service.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.opencsv.CSVReader;
 import com.stocks.sample.domain.Stock;
 import com.stocks.sample.dto.StockDto;
@@ -10,9 +11,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.io.FileReader;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @Service("stockService")
@@ -83,6 +88,32 @@ public class StockServiceImpl implements StockService {
         }
 
         return results;
+    }
+
+    /**
+     * @param symbol
+     * @return
+     */
+    public String getHistoricalStockData(String symbol) throws JsonProcessingException {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.add(Calendar.DATE, -30);
+
+        Date startDate = cal.getTime();
+        Date endDate = new Date();
+
+        SimpleDateFormat formatter = new SimpleDateFormat("YYYY-MM-dd");
+        String strStartDate = formatter.format(startDate);
+        String strEndDate = formatter.format(endDate);
+
+        String yqlURL = "http://query.yahooapis.com/v1/public/yql?q=";
+        String dataFormat = "&format=json&env=store://datatables.org/alltableswithkeys";
+        String historicalQ = yqlURL + "select * from yahoo.finance.historicaldata where symbol =\"" + symbol + "\"and startDate=\"" + strStartDate + "\" and endDate=\"" + strEndDate + "\"" + dataFormat;
+
+        RestTemplate restTemplate = new RestTemplate();
+        String result = restTemplate.getForObject(historicalQ, String.class);
+
+        return result;
     }
 
     /**
