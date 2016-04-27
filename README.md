@@ -20,14 +20,12 @@ This project has three backend implementations which are identical in feature bu
 
 Please choose between any one of the implementations and setup as guided in their README's.
 
-* Java Backend
-* Node JS Backend
-* .Net Backend
+* Java Backend (backend-java)
+* Node JS Backend (backend-nodejs)
+* .Net Backend (backend-dotnet)
 
 ## Frontend Setup
 
-### TODO:
+Please choose between any one of the implementations and setup as guided in their README's.
 
-Ember CLI is F'd for node >=5 and npm >= 3 :( Will need to switch the frontend implementation with something else. (i.e. react, angular2, or aurelia)
-
-IN PROGRESS
+* React Frontend (frontend-react)
