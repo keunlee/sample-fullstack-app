@@ -39,7 +39,6 @@ export default class Dashboard extends React.Component<any, any> {
     }
 
     public componentWillReceiveProps(newProps : any, oldProps : any) {
-        console.log("COMPONENT WILL RECIEVE PROPS");
         this.setState({
             options : newProps.options,
             selectedStockData : newProps.selectedStockData
@@ -47,11 +46,13 @@ export default class Dashboard extends React.Component<any, any> {
     }
 
     private handleOptionChange : (event : any, option : Stock) => void = (event : any, option : any) => {
-        this.setInputValue(option.name);
+        let inputValue = `${option.name} (${option.symbol})`;
+        this.setInputValue(inputValue);
     }
 
     private handleOptionClick : (event : any, option : Stock) => void = (event : any, option : any) => {
-        this.setInputValue(option.name);
+        let inputValue = `${option.name} (${option.symbol})`;
+        this.setInputValue(inputValue);
         this.props.getHistoricalStockData( option.symbol );
     }
 

@@ -17,12 +17,8 @@ export default class CandleStickContainer extends React.Component<any, any> {
     public render() {
         const { selectedStockData } = this.props;
 
-        if ( selectedStockData.query && selectedStockData.query.results && selectedStockData.query.results.quote.length > 0 ) {
-            console.log("DATA");
-        }
-
         return (
-            <div className="selected-chart" ref="selected-chart">CHART CONTAINER</div>
+            <div className="selected-chart" ref="selected-chart"></div>
         );
     }
 
@@ -33,7 +29,6 @@ export default class CandleStickContainer extends React.Component<any, any> {
 
         let selectedStockData = newProps.selectedStockData;
         if ( selectedStockData.query && selectedStockData.query.results && selectedStockData.query.results.quote.length > 0 ) {
-            console.log("RENDER CHART");
             this.candleStick.buildChart( selectedStockData.query.results.quote );
         }
     }

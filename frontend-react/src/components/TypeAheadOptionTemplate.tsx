@@ -16,7 +16,7 @@ export default class TypeAheadOptionTemplate extends React.Component<any, any> {
         }
         return (
             <div style={bgColor}>
-                <span>{this.props.data.name}</span>
+                <span>{this.props.data.name} ({this.props.data.symbol})</span>
             </div>
         );
     }
