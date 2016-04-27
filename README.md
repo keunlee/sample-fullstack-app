@@ -29,3 +29,9 @@ Please choose between any one of the implementations and setup as guided in thei
 Please choose between any one of the implementations and setup as guided in their README's.
 
 * React Frontend (frontend-react)
+
+## Running Backend, Frontend, and Proxy Server
+
+* (1) Follow instructions for setting up a backend implementation and starting it. They can be found in each implementations README.
+* (2) Follow instructions for setting up a frontend implementation and starting it. They can be found in each implementations README.
+* (3) Follow instructions for starting up a proxy server on port 9000 in the `proxy-server` subproject, found in the README.

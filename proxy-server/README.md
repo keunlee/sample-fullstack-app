@@ -27,7 +27,7 @@ the server)
 ### Starting the Proxy Server
 
 1. From the commandline, change the current working directory to the folder `proxy-server`.
-2. Run: `node main.js`
+2. Run: `npm start`
 3. the frontend and backend api should now be accessible on port 9000
 
 ### Development Notes
