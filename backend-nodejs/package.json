@@ -4,7 +4,8 @@
   "description": "**NOTES**",
   "main": "index.js",
   "scripts": {
-    "start": "grunt"
+    "start": "grunt",
+    "build": "grunt build"
   },
   "author": "",
   "license": "ISC",

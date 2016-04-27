@@ -35,7 +35,7 @@ To install the above, I highly recommend using a node version manager (i.e. http
 
 The following should lint and transpile typescript sources to javascript (there should be no errors)
 
-* `grunt build`
+* `npm run build`
 
 ### Database Setup
 
@@ -63,7 +63,7 @@ The following should lint and transpile typescript sources to javascript (there 
 ### Starting the Backend Server
 
 1. From the commandline, change the current working directory to the folder `backend-nodejs`.
-2. Run: `grunt`
+2. Run: `npm start`
 3. Verify that the server has started
 4. Verify that our stock look up service is working by navigating to the following: [http://localhost:8080/service/stocks?q=aa](http://localhost:8080/service/stocks?q=aa) (you should see results)
 
