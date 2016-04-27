@@ -14,48 +14,11 @@ export default class CandleStick {
         this.initialize();
     }
 
-    public invalidateProperties() : void {
-        this.commitProperties();
-    }
-
-    public invalidateSize() : void {
-        this.measure();
-    }
-
-    public invalidateDisplay() : void {
-        this.updateDisplay();
-    }
-
-    private preInitialize() : void {
-        this.createChildren();
-    }
-
-    private initialize() : void {
-        this.commitProperties();
-        this.measure();
-    }
-
-    private commitProperties() : void {}
-    private measure() : void {}
-    private updateDisplay() : void {}
-    private createChildren() : void {}
-
-    // public createChart( el : any, props : any, state : any ) : void {}
-    // public updateChart( el : any, state : any ) : void {}
-    // public destoryChart( el : any ) : void {}
-    // private renderChart( el : any, scales : any, data : any ) : void {}
-
-    private min(a, b) : any {
-        return a < b ? a : b;
-    }
-
-    private max(a, b) : any {
-        return a > b ? a : b;
-    }
-
     public buildChart(data) : void {
         let self : CandleStick = this;
         let margin = 50;
+
+        d3.select(".selected-chart").html("");
 
         let chart = d3.select(".selected-chart")
             .append("svg:svg")
@@ -164,5 +127,44 @@ export default class CandleStick {
             .attr("stroke", function (d) {
                 return d['Open'] > d['Close'] ? "red" : "green";
             })
+    }
+
+    public invalidateProperties() : void {
+        this.commitProperties();
+    }
+
+    public invalidateSize() : void {
+        this.measure();
+    }
+
+    public invalidateDisplay() : void {
+        this.updateDisplay();
+    }
+
+    private preInitialize() : void {
+        this.createChildren();
+    }
+
+    private initialize() : void {
+        this.commitProperties();
+        this.measure();
+    }
+
+    private commitProperties() : void {}
+    private measure() : void {}
+    private updateDisplay() : void {}
+    private createChildren() : void {}
+
+    // public createChart( el : any, props : any, state : any ) : void {}
+    // public updateChart( el : any, state : any ) : void {}
+    // public destoryChart( el : any ) : void {}
+    // private renderChart( el : any, scales : any, data : any ) : void {}
+
+    private min(a, b) : any {
+        return a < b ? a : b;
+    }
+
+    private max(a, b) : any {
+        return a > b ? a : b;
     }
 }

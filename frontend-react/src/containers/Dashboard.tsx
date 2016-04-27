@@ -11,12 +11,13 @@ export default class Dashboard extends React.Component<any, any> {
         super(props, context);
         this.state = {
             inputValue : '',
-            options : []
+            options : [],
+            selectedStockData : {}
         };
     }
 
     public render() {
-        const {options} = this.props;
+        const {options, selectedStockData} = this.props;
 
         return (
             <div className="dashboard">
@@ -30,14 +31,18 @@ export default class Dashboard extends React.Component<any, any> {
                     onOptionChange={this.handleOptionChange}
                     onOptionClick={this.handleOptionClick}>
                 </Typeahead>
-                <CandleStickContainer></CandleStickContainer>
+                <CandleStickContainer
+                    selectedStockData={ selectedStockData }>
+                </CandleStickContainer>
             </div>
         );
     }
 
     public componentWillReceiveProps(newProps : any, oldProps : any) {
+        console.log("COMPONENT WILL RECIEVE PROPS");
         this.setState({
-            options : newProps.options
+            options : newProps.options,
+            selectedStockData : newProps.selectedStockData
         });
     }
 

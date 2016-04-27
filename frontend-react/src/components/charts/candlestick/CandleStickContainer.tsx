@@ -9,10 +9,17 @@ export default class CandleStickContainer extends React.Component<any, any> {
 
     constructor(props, context) {
         super(props, context);
+        this.state = {
+            selectedStockData : {}
+        };
     }
 
     public render() {
-        const {} = this.props;
+        const { selectedStockData } = this.props;
+
+        if ( selectedStockData.query && selectedStockData.query.results && selectedStockData.query.results.quote.length > 0 ) {
+            console.log("DATA");
+        }
 
         return (
             <div className="selected-chart" ref="selected-chart">CHART CONTAINER</div>
@@ -20,20 +27,25 @@ export default class CandleStickContainer extends React.Component<any, any> {
     }
 
     public componentWillReceiveProps(newProps : any, oldProps : any) {
-        console.log("COMPONENT WILL RECIEVE PROPS");
+        this.setState({
+            selectedStockData : newProps.selectedStockData
+        });
+
+        let selectedStockData = newProps.selectedStockData;
+        if ( selectedStockData.query && selectedStockData.query.results && selectedStockData.query.results.quote.length > 0 ) {
+            console.log("RENDER CHART");
+            this.candleStick.buildChart( selectedStockData.query.results.quote );
+        }
     }
 
     public componentDidMount() : void {
-        console.log("COMPONENT DID MOUNT");
         // create initial element here
         this.candleStick = new CandleStick();
     }
 
     public componentDidUpdate( prevProps : any, prevState : any ) : void {
-        console.log("COMPONENT DID UPDATE");
     }
 
     public componentWillUnmount() : void {
-        console.log("COMPONENT WILL UNMOUNT");
     }
 }

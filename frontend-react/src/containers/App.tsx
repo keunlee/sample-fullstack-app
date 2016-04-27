@@ -18,7 +18,8 @@ class App extends React.Component<any, any> {
             <Dashboard
                 findStocksByWildCard={this.findStocksByWildCard}
                 getHistoricalStockData={this.getHistoricalStockData}
-                options={( this.state && this.state.options )  ? this.state.options : []}>
+                options={( this.state && this.state.options )  ? this.state.options : []}
+                selectedStockData={ (this.state && this.state.selectedStockData) ? this.state.selectedStockData : {} }>
             </Dashboard>
         );
     }
@@ -26,7 +27,8 @@ class App extends React.Component<any, any> {
     public componentWillReceiveProps(newProps : any, oldProps : any) {
         this.setState({
             appStarted : newProps.appStarted,
-            options : newProps.options
+            options : newProps.options,
+            selectedStockData : newProps.selectedStockData
         });
     }
 
@@ -42,7 +44,8 @@ class App extends React.Component<any, any> {
 function mapStateToProps(state : any, nextProps : any) {
     return {
         appStarted : state.App.appStarted,
-        options : state.App.options
+        options : state.App.options,
+        selectedStockData : state.App.selectedStockData
     };
 }
 
