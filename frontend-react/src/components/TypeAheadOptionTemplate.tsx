@@ -11,7 +11,7 @@ export default class TypeAheadOptionTemplate extends React.Component<any, any> {
         // If this option is currently selected, render it with a green background.
         if (this.props.isSelected) {
             bgColor = {
-                color : 'green'
+                backgroundColor: '#c7c7c7'
             };
         }
         return (

@@ -10,16 +10,30 @@ import App from "./containers/App";
 
 let css = require("./styles/index.scss");
 let renderNode = document.getElementById('root');
+let config = require('../config.json');
 let store = Store;
 
-ReactDOM.render(
-    <div>
-        <Provider store={store}>
-            <Router history={hashHistory}>
-                <Route path="/" component={App}/>
-            </Router>
-        </Provider>
-        <DevTools store={store}/>
-    </div>,
-    renderNode
-);
+if ( config.enableDevTools ) {
+    ReactDOM.render(
+        <div>
+            <Provider store={store}>
+                <Router history={hashHistory}>
+                    <Route path="/" component={App}/>
+                </Router>
+            </Provider>
+            <DevTools store={store}/>
+        </div>,
+        renderNode
+    );
+} else {
+    ReactDOM.render(
+        <div>
+            <Provider store={store}>
+                <Router history={hashHistory}>
+                    <Route path="/" component={App}/>
+                </Router>
+            </Provider>
+        </div>,
+        renderNode
+    );
+}

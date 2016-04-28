@@ -9,18 +9,13 @@ export default class CandleStick {
     private start = new Date(this.end.getTime() - 1000 * 60 * 60 * 24 * 60);
     private data = [];
 
-    constructor() {
-        this.preInitialize();
-        this.initialize();
-    }
-
     public buildChart(data) : void {
         let self : CandleStick = this;
         let margin = 50;
 
         d3.select(".selected-chart").html("");
 
-        let chart = d3.select(".selected-chart")
+        let svg = d3.select(".selected-chart")
             .append("svg:svg")
             .attr("class", "chart")
             .attr("width", this.width)
@@ -45,7 +40,7 @@ export default class CandleStick {
             ])
             .range([margin, self.width - margin]);
 
-        chart.selectAll("line.x")
+        svg.selectAll("line.x")
             .data(x.ticks(10))
             .enter().append("svg:line")
             .attr("class", "x")
@@ -55,7 +50,7 @@ export default class CandleStick {
             .attr("y2", self.height - margin)
             .attr("stroke", "#ccc");
 
-        chart.selectAll("line.y")
+        svg.selectAll("line.y")
             .data(y.ticks(10))
             .enter().append("svg:line")
             .attr("class", "y")
@@ -65,7 +60,7 @@ export default class CandleStick {
             .attr("y2", y)
             .attr("stroke", "#ccc");
 
-        chart.selectAll("text.xrule")
+        svg.selectAll("text.xrule")
             .data(x.ticks(10))
             .enter().append("svg:text")
             .attr("class", "xrule")
@@ -78,7 +73,7 @@ export default class CandleStick {
                 return (date.getMonth() + 1) + "/" + date.getDate();
             });
 
-        chart.selectAll("text.yrule")
+        svg.selectAll("text.yrule")
             .data(y.ticks(10))
             .enter().append("svg:text")
             .attr("class", "yrule")
@@ -87,9 +82,11 @@ export default class CandleStick {
             .attr("dy", 0)
             .attr("dx", 20)
             .attr("text-anchor", "middle")
-            .text(String);
+            .text(function(d) {
+                return d.toFixed(2);
+            });
 
-        chart.selectAll("rect")
+        svg.selectAll("rect")
             .data(data)
             .enter().append("svg:rect")
             .attr("x", function (d) {
@@ -108,7 +105,7 @@ export default class CandleStick {
                 return d['Open'] > d['Close'] ? "red" : "green";
             });
 
-        chart.selectAll("line.stem")
+        svg.selectAll("line.stem")
             .data(data)
             .enter().append("svg:line")
             .attr("class", "stem")
@@ -128,37 +125,6 @@ export default class CandleStick {
                 return d['Open'] > d['Close'] ? "red" : "green";
             })
     }
-
-    public invalidateProperties() : void {
-        this.commitProperties();
-    }
-
-    public invalidateSize() : void {
-        this.measure();
-    }
-
-    public invalidateDisplay() : void {
-        this.updateDisplay();
-    }
-
-    private preInitialize() : void {
-        this.createChildren();
-    }
-
-    private initialize() : void {
-        this.commitProperties();
-        this.measure();
-    }
-
-    private commitProperties() : void {}
-    private measure() : void {}
-    private updateDisplay() : void {}
-    private createChildren() : void {}
-
-    // public createChart( el : any, props : any, state : any ) : void {}
-    // public updateChart( el : any, state : any ) : void {}
-    // public destoryChart( el : any ) : void {}
-    // private renderChart( el : any, scales : any, data : any ) : void {}
 
     private min(a, b) : any {
         return a < b ? a : b;
