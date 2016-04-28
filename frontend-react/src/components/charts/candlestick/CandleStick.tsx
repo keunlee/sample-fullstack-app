@@ -82,7 +82,7 @@ export default class CandleStick {
             .attr("dy", 0)
             .attr("dx", 20)
             .attr("text-anchor", "middle")
-            .text(function(d) {
+            .text(function (d) {
                 return d.toFixed(2);
             });
 
