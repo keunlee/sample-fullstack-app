@@ -50,7 +50,7 @@ Alternatively, you could modify your CORS settings too as well, which will not n
 
 ### Credit
 
-A modified copy of the proxy.js file taken from the Redbird Reverse Proxy Project is used here. This modified copy of the of the file can be found
+A modified copy of the proxy.js file taken from the Redbird Reverse Proxy Project is used here. This modified copy of the file can be found
 in `lib/proxy.js`
 
 Much thanks and credit to the original author for their open source contribution of Redbird Reverse Proxy -- https://github.com/OptimalBits/redbird
