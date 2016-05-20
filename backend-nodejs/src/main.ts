@@ -1,4 +1,4 @@
-///<reference path="../typings/main.d.ts" />
+///<reference path="../typings/index.d.ts" />
 
 import {IApplicationContext} from "./core/context/IApplicationContext";
 import {ApplicationContext} from "./core/context/ApplicationContext";

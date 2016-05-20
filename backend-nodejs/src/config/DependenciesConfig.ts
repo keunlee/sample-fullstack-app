@@ -1,4 +1,4 @@
-///<reference path="../../typings/main.d.ts" />
+///<reference path="../../typings/index.d.ts" />
 
 import { TypeBinding, TypeBindingScopeEnum } from '../../node_modules/inversify/source/inversify';
 import {StockService} from "../service/StockService";

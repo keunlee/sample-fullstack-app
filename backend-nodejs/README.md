@@ -23,8 +23,11 @@ To install the above, I highly recommend using a node version manager (i.e. http
 ### Prerequisites
 
 * typescript >= 1.8 `npm install -g typescript`
-* typings `npm install -g typings`
+* typings >= 1.x `npm install -g typings`
 * grunt-cli `npm install -g grunt-cli`
+
+__NOTES (05/20/2016)__ - check the version of `typings` you are using. if it's < 1.x, there are breaking changes that 1.x has introduced and you will need to install the latest version.
+
 
 ### Install npm and typscript Packages
 
