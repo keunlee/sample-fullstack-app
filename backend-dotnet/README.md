@@ -1,6 +1,6 @@
 ## Dot Net Backend
 
-* OUTDATED NEES TO BE UPDATED TO USE "dotnet" CLI TOOLING
+**TODO: OUTDATED NEES TO BE UPDATED TO USE "dotnet" CLI TOOLING**
 
 ### Overview
 
