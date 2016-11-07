@@ -1,5 +1,7 @@
 ## Dot Net Backend
 
+* OUTDATED NEES TO BE UPDATED TO USE "dotnet" CLI TOOLING
+
 ### Overview
 
 * ASP .Net Web API 2 - REST API Server
