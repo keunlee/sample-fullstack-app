@@ -1,4 +1,11 @@
 export default class HttpException extends Error {
+  public httpCode : number;
+  public body : string;
+  public headers : any;
+  public options : any;
+  public method : string;
+  public stack : string;
+  
     constructor(httpCode : number, body : string, headers : any, method : string, options : any) {
         super("HttpException");
         this.message = "HttpException";
@@ -9,11 +16,4 @@ export default class HttpException extends Error {
         this.options = options;
         this.stack = (<any>new Error()).stack;
     }
-
-    public httpCode : number;
-    public body : string;
-    public headers : any;
-    public options : any;
-    public method : string;
-    public stack : string;
 }
